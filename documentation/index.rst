@@ -17,6 +17,14 @@ Welkom bij de Avans Electrotechniek & Mechatronica Microcontrollers Workshop
    :caption: Inhoudsopgave:
 
    documentation/overview.md
+   documentation/arduino.md
+   documentation/visual_code.md
+   documentation/assignment_1.md
+   documentation/assignment_2.md
+   documentation/assignment_3.md
+   documentation/examples.md
+   documentation/faq.md
+   documentation/teacher_manual.md
 
 
 

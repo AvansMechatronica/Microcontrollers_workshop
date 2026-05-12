@@ -4,11 +4,24 @@ Welkom bij de Avans Electrotechniek & Mechatronica Microcontrollers Workshop. In
 
 ## Verkrijgen van de Workshop bestanden
 
-Je kunt de workshopbestanden verkrijgen door de volgende GitHub-repository te klonen:
+Om aan de slag te gaan, heb je toegang nodig tot de workshopbestanden. Deze bestanden bevatten de benodigde code, schema's en instructies voor de opdrachten die je zult uitvoeren tijdens de workshop.
 
-```
-git clone https://github.com/AvansMechatronica/Microcontrollers_workshop.git
-```
+:::::{card} 
+::::{tab-set}
 
+:::{tab-item} Download ZIP
 Of je kunt de bestanden downloaden als een ZIP-bestand via de volgende link:
 [Download Workshop Bestanden](https://github.com/AvansMechatronica/Microcontrollers_workshop/archive/refs/heads/main.zip)
+:::
+
+:::{tab-item} Git Clone
+Je kunt de workshopbestanden verkrijgen door de volgende GitHub-repository te klonen:
+
+```cmd
+git clone https://github.com/AvansMechatronica/Microcontrollers_workshop.git
+```
+:::
+
+::::
+
+:::::
