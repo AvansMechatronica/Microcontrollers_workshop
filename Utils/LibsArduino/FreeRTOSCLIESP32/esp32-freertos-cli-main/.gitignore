@@ -1,0 +1,7 @@
+# Old gitignore
+.pio/
+.vscode/
+lib/README
+include/README
+test/README
+#platformio.ini
