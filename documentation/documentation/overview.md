@@ -14,7 +14,7 @@ Of je kunt de bestanden downloaden als een ZIP-bestand via de volgende link:
 [Download Workshop Bestanden](https://github.com/AvansMechatronica/Microcontrollers_workshop/archive/refs/heads/main.zip)
 
 Pak het zip-bestand uit in een voor jou bekende map op je computer, zodat je gemakkelijk toegang hebt tot alle benodigde materialen voor de workshop. 
-
+:::
 
 :::{tab-item} Git Clone
 Je kunt de workshopbestanden verkrijgen door de volgende GitHub-repository te klonen:
