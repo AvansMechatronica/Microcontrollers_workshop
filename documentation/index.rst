@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welkom bij de Avans Electrotechniek & Mechatronica Microcontrollers Workshop
+Electrotechniek & Mechatronica Microcontrollers Workshop
 ====================================
 
 **Welkom bij de Avans Electrotechniek & Mechatronica Microcontrollers Workshop** 

@@ -2,6 +2,9 @@
 
 In deze workshop gaan we aan de slag met de Arduino UNO. De Arduino UNO is een microcontroller board gebaseerd op de ATmega328P. Het is een van de meest populaire en veelzijdige microcontroller boards, ideaal voor beginners en ervaren makers.
 
+![Image](../images/arduino_uno.jpg)
+Figuur 1.	Arduino UNO
+
 ## Kenmerken van de Arduino UNO
 - Microcontroller: ATmega328P
 - Operating Voltage: 5V

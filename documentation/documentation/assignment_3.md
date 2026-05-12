@@ -128,12 +128,14 @@ Een LED kan in principe op de volgende manieren op een microcontroller worden aa
 :::{grid-item-card} 
 ![Image](../images/led_active_low.png)
 Figuur 5.
+
 Output / LED aangesloten
 op voedingsspanning	
 :::
 :::{grid-item-card}
 ![Image](../images/led_active_high.png)
 Figuur 6.
+
 Output / LED aangesloten
 op ground
 
@@ -178,22 +180,21 @@ Op 4 ingangen van poort B zijn 4 schakelaars aangesloten. Een schakelaar kan in 
 :::{grid-item-card} 
 ![Image](../images/switch_active_low.png)
 Figuur 7.
+
 Input / schakelaar aangesloten
 op ground	
 :::
 :::{grid-item-card}
 ![Image](../images/switch_active_high.png)
 Figuur 6.
+
 Input / schakelaar aangesloten
 op voedingsspanning
 :::
 ::::			 
 
 
-Figuur 7.					Figuur 8.
 
-Input / schakelaar aangesloten		Input / schakelaar aangesloten 
-op ground				op voedingsspanning
 
 
 1.	Als een logische 1 op de input van de microcontroller wordt voorgesteld door +5 Volt, en een logische 0 door 0 volt, geef dan in de volgende tabel aan, wanneer een schakelaar is ingedrukt of losgelaten. Vul in deze tabel IN of LOS in.
