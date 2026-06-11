@@ -2,30 +2,25 @@
 
 > **Deze opdracht moet nog worden herschreven**
 
-## Opdracht 1: Simulator MicroAVR
+## Opdracht 1.1: Simulator MicroAVR
 
 MicroAVR is een simulator die bedoeld is als eerste kennismaking met een microcontroller. In deze simulator wordt de microcontroller geprogrammeerd en gesimuleerd m.b.v. een Programma Structuur Diagram (PSD), waarbij tevens zichtbaar wordt, hoe een basisprogramma in de taal C eruit ziet (dit is dus nog géén volledig C-programma!).
 
-N.B.:
+### Opmerking:
 
-•	alle software moet worden uitgevoerd met Administrator Rights
-•	voor het uitvoeren van MicroAVR moet Java  op de PC / laptop zijn geïnstalleerd!
+- Alle software moet worden uitgevoerd met Administrator Rights
+- Voor het uitvoeren van MicroAVR moet Java op de PC / laptop zijn geïnstalleerd!
 
+### Aanwijzingen:
 
-Aanwijzingen:
+1. Download het [MicroAVR programma](https://github.com/AvansMechatronica/Microcontrollers_workshop/blob/main/micro_avr/MicroAVR.zip) van GitHub.
+2. Pak het zip-bestand uit op de C- of D-schijf in de directory `<schijf>:\MicroAVR` (maak deze directory eventueel zelf aan).
+3. Start MicroAVR op.
+4. Kies voor Nieuwe Speler…
+5. Voer een spelersnaam in
+6. Kies het bestand inleiding.avr.cbt en voer dit helemaal uit.
 
-1.	Haal van Brightspace (bij Software > MicroAVR) de ZIP-file MicroAVR.zip op en pak deze uit op de C- of D-schijf in de directory <schijf>:\MicroAVR (maak deze directory eventueel zelf aan).
-
-2.	Start MicroAVR op.
-
-3.	Kies voor Nieuwe Speler…
-
-4.	Voer een spelersnaam in
-
-5.	Kies het bestand inleiding.avr.cbt en voer dit helemaal uit.
-
- 
-Opdracht 2.	Simulatie van schakelaars en LED’s voor de microcontroller
+## Opdracht 1.2: Simulatie van schakelaars en LED's voor de microcontroller
 
 In deze opdracht wordt een deel van de hardware van de microcontroller gesimuleerd met MicroAVR. Er wordt dus nog géén gebruik gemaakt van de echte hardware / microcontroller!
 

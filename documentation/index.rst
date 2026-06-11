@@ -3,10 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Electrotechniek & Mechatronica Microcontrollers Workshop
+Workshop Programmeren in C voor Microcontrollers
 ====================================
 
-**Welkom bij de Avans Electrotechniek & Mechatronica Microcontrollers Workshop** 
+**Welkom bij de Avans Workshop Programmeren in C voor Microcontrollers** 
 
 .. note::
    This project is under active development.
@@ -18,7 +18,7 @@ Electrotechniek & Mechatronica Microcontrollers Workshop
 
    documentation/overview.md
    documentation/arduino.md
-   documentation/visual_code.md
+   documentation/install.md
    documentation/assignment_1.md
    documentation/assignment_2.md
    documentation/assignment_3.md
