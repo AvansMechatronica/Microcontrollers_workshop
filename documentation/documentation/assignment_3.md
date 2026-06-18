@@ -1,4 +1,4 @@
-## Opdracht 3: Programmeren in C op de Arduino Uno
+# Opdracht 3: Programmeren in C op de Arduino Uno
 
 
 In dit practicum wordt geoefend met operaties op bits en met herhalings- en beslissingsstructuren in de taal C.
