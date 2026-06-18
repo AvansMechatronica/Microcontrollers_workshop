@@ -50,7 +50,7 @@ Voer daarna de volgende stappen uit:
 ![image](../images/structorizer_executer.jpg)
 *Figuur 3: Executor window*
 
-## Opdracht 3: Berekenen van het gemiddelde van een lijst getallen
+## Opdracht 1.3: Berekenen van het gemiddelde van een lijst getallen
 
 Gebruik voor deze opdracht het project `Framework_2.nsd`.
 
@@ -61,7 +61,10 @@ Maak in Structorizer een programma dat het gemiddelde berekent van een lijst met
 3. Als de invoer van de lijst wordt afgesloten met de waarde -1, moeten het gemiddelde en het aantal ingevoerde getallen worden weergegeven.
 4. Het programma herhaalt zich oneindig.
 
-## Opdracht 4: Uitbreiding van opdracht 3
+## Opdracht 1.4: Uitbreiding van opdracht 1.3
 
 Breid de uitwerking van opdracht 3 zodanig uit dat ook wordt geteld hoe vaak de waarde 0 in de invoerlijst voorkomt. Laat deze waarde ook zien.
 
+## Opdracht 1.5: Inleveren van de opdracht
+
+Maak een screenshot van je Structorizer-programma en de uitvoer ervan. Zorg ervoor dat de screenshot duidelijk laat zien dat je programma correct werkt en voldoet aan de eisen van de opdracht. Lever vervolgens de screenshot in via Brightspace bij `Opdracht 1: Oefenen met PSD's`. Zorg ervoor dat je de opdracht op tijd inlevert, zodat je feedback kunt ontvangen en eventuele verbeteringen kunt aanbrengen.
