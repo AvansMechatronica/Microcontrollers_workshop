@@ -1,8 +1,19 @@
-# Opdracht 3: De Arduino Uno en de PlatformIO programmeeromgeving 
+# Opdracht 2: De Arduino Uno en de PlatformIO programmeeromgeving 
 
-**Deze opdracht moet nog worden herschreven**
 
-## Opdracht 1: Een programma uitvoeren op de Arduino Uno
+## Opdracht 2.1: Installatie Visual Studio Code en PlatformIO
+:::{note}
+Deze opdracht voer je in je eigen tijd uit voordat je aan de volgende opdrachten kunt beginnen. Je hoeft deze opdracht dus niet in het practicum uit te voeren, maar je moet deze opdracht wel hebben uitgevoerd voordat je aan de volgende opdrachten kunt beginnen. Als je de software nog niet hebt geïnstalleerd heb je geen toegang tot het practicum.
+:::
+
+Voor het programmeren van de Arduino Uno wordt gebruik gemaakt van Visual Studio Code in combinatie met de PlatformIO extension. Deze software is gratis te downloaden en te gebruiken. Volg de volgende stappen om deze software te installeren:
+1.	Download en installeer Visual Studio Code van https://code.visualstudio.com/
+2.	Open Visual Studio Code en ga naar de Extensions (Ctrl+Shift+X)	
+3.	Zoek naar PlatformIO en installeer deze extension
+4.	Na installatie van PlatformIO, herstart Visual Studio Code	
+
+
+## Opdracht 2.2: Een programma uitvoeren op de Arduino Uno
 
 De Arduino Uno wordt gebruikt in combinatie met een zgn. shield, dat nodig is voor communicatie met de PLC en dat de signaalzuil gaat aansturen. In het practicum worden de schakelaars en de LED’s op dit shield gebruikt. In figuur 1 zijn deze aangegeven.
 
@@ -14,36 +25,15 @@ Figuur 1.	Positie van schakelaars en LED’s
 
 
  
-Om een programma op de Arduino Uno uit te voeren moet dit programma worden gedownload (‘geflasht’) van de PC naar de Arduino. Hiervoor wordt het programma XLoader gebruikt, zie figuur 1 voor een screenshot van de user interface.
+Om een programma op de Arduino Uno uit te voeren moet dit programma worden gedownload (‘geflasht’) van de PC naar de Arduino. We doen dit met behulp van PlatformIO. Volg de volgende stappen om een programma te flashen naar de Arduino Uno:
 
+1. Open in VisualStudio Code de map `opdracht2/FlasLeds`Gebruik hiervoor in Visual Studio Code de optie `File > Open Folder` en selecteer de map `opdracht2/FlashLeds`
 
- 
+2. Compileer het programma door in de beneden balk van Visual Studio Code te klikken op het vinkje (check) icoon, of door de sneltoets Ctrl+Alt+B te gebruiken. Controleer of er geen fouten zijn tijdens het compileren.
 
-Figuur 2	User interface van XLoader
+3. Flash het programma naar de Arduino door in de beneden balk van Visual Studio Code te klikken op het pijltje (upload) icoon, of door de sneltoets Ctrl+Alt+U te gebruiken. Controleer of de LED’s op het shield knipperen zoals verwacht.
 
-Het programma XLoader moet worden gebruikt om het programma, dat in een zgn. HEX-file staat, te flashen op de Arduino.
-
-Voer de volgende stappen uit om een knipperlicht te downloaden dat alle 8 LED’s op het Arduino shield laat knipperen:
-
-1.	Zorg ervoor dat alle benodigde drivers voor de Arduino zijn geïnstalleerd. Zie ook http://arduino.cc/
-
-2.	Haal het bestand FlashLeds.hex van Brightspace en sla dit op je harde schijf (of USB stick, of homedrive, of...) op.
-
-3.	Sluit de Arduino aan op een USB poort.
-
-4.	Start XLoader
-
-5.	Selecteer in XLoader als device: Uno(ATmega328)
-
-6.	Selecteer in XLoader de juiste COM port
-
-7.	Zorg ervoor dat in XLoader de baudrate is ingesteld op 115200
-
-8.	Selecteer de HEX-file FlashLeds.hex
-
-9.	Druk op de knop Upload. Alle 8 LED’s op het shield moeten nu knipperen.
- 
-Opdracht 2.	Een eenvoudig programma in de taal C
+## Opdracht 2.3: Een eenvoudig programma in de taal C
 
 
 Voor het programmeren van C-code voor de Arduino Uno moet gebruik worden gemaakt van Microchip Studio (oude naam: Atmel Studio), deze ondersteunt de ATmega328. Deze versie van Atmel Studio staat op Brightspace bij ‘Software > Atmel Studio’
@@ -110,7 +100,7 @@ Figuur 4.	Het aangepaste programma FlashLeds
 
 
  
-Opdracht 3.	Onderzoek aansturen LED’s
+Opdracht 2.4.	Onderzoek aansturen LED’s
 
 
 De uitwerking van de volgende opdrachten (1 en 2) moet worden uitgelegd aan de docent(en), waarna de opdracht wordt afgetekend.
@@ -162,7 +152,7 @@ Conclusie:
 •	Een LED is AAN als de output een logische … is
 •	Een LED is UIT als de output een logische … is
  
-Opdracht  4.	Onderzoek inlezen schakelaars 
+## Opdracht 2.5: Onderzoek inlezen schakelaars 
 
 
 De uitwerking van de volgende opdrachten (1 en 2) moet worden uitgelegd aan de docent(en), waarna de opdrachten wordt afgetekend.
@@ -208,7 +198,6 @@ Figuur 8|
 
 Tabel 1.		Gedrag van schakelaars op de ingang van een microcontroller
 
-
 2.	Op welke manier zijn nu de schakelaars aangesloten? M.a.w.: stelt een ingedrukte schakelaar een ‘0’ voor op de ingang van de microcontroller, of juist een ‘1’? Onderzoek dit door:
 
 1.	een aanname te maken, en vervolgens
@@ -229,7 +218,7 @@ Conclusie:
 •	Een schakelaar die is ingedrukt genereert een logische … op de ingang van de microcontroller
 •	Een schakelaar die is losgelaten genereert een logische … op de ingang van de microcontroller
  
-Practicumopdracht 1.7	Teller
+## Opdracht 2.6: Teller
 
 De uitwerking van de volgende opdrachten moet worden gedemonstreerd aan de docent(en), waarna de opdrachten worden afgetekend
 
