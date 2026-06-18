@@ -28,7 +28,7 @@ Test of de software correct is geïnstalleerd: Klik op het Start-menu en zoek na
 ## Opdracht 1.2: Basisconstructies in PSD's
 
 Gebruik voor deze opdracht het project `Framework_1.nsd`. 
-- Dit bestand kun je vinden in de map `structorizer` van de microcontrollers workshop. Zie [Installatie-instructies](install.md) voor meer informatie over het verkrijgen van de workshopbestanden.
+- Dit bestand kun je vinden in de map `opdracht1/structorizer` van de microcontrollers workshop. Zie [Installatie-instructies](install.md) voor meer informatie over het verkrijgen van de workshopbestanden.
 
 ![image](../images/structorizer_framework1.jpg)
 *Figuur 1: Structorizer met framework 1*
