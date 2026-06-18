@@ -23,6 +23,8 @@ Workshop Programmeren in C voor Microcontrollers
    documentation/assignment_2.md
    documentation/assignment_3.md
    documentation/assignment_4.md
+   documentation/assignment_5.md
+   documentation/assignment_6.md
    documentation/examples.md
    documentation/faq.md
    documentation/teacher_manual.md
