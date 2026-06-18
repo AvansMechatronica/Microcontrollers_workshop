@@ -1,5 +1,3 @@
-Practicum Programmeren van Microcontrollers
-
 ## Opdracht 3: Programmeren in C op de Arduino Uno
 
 
@@ -26,7 +24,7 @@ Beantwoord eerst de volgende vraag, alvorens te beginnen aan de uitwerking begin
 Welke operatie, en welk masker (dus de waarde van de bits m7..m0) zijn nodig om het gewenste resultaat te krijgen volgens figuur 2?
 
 
-## Opdracht 3.1.
+## Opdracht 3.1: if-statement en bitwise AND operatie
 
 1. Open in VisualStudio Code het `Framework_3_1`-project door de map `opdracht3/Framework_3_1` te openen.
 2. Open het `main.c` bestand in Visual Studio Code en bestudeer dit programma. 
@@ -43,16 +41,17 @@ Maak gebruik van een bitwise AND operatie om te controleren of schakelaar 0 is i
 :::
 
  
-## Opdracht 3.2.
+## Opdracht 3.2: if-statement en bitwise AND operatie
 1. Open in VisualStudio Code het `Framework_3_2`-project door de map `opdracht3/Framework_3_2` te openen.
 2. Open het `main.c` bestand in Visual Studio Code en bestudeer dit programma. 
+  - je kunt eventueel ook het programma `main.c` van opdracht 3.1 gebruiken als startpunt voor deze opdracht, maar zorg er dan wel voor dat je dit programma eerst kopieert naar de map `opdracht3/Framework_3_2/src` voordat je aan de uitwerking van deze opdracht begint.
 
 3. Maak een programma `main.c` dusdanig dat het de LEDs laat knipperen, zolang één of meer willekeurige schakelaar(s) is/zijn ingedrukt. Als geen schakelaar is ingedrukt, dan blijven de LEDs in de laatste stand staan.
 
 4. Pas het programma nu zodanig aan, dat uitsluitend schakelaar 1 deze functie heeft. Het indrukken van een andere schakelaar mag geen invloed hebben.
 
 
-## Opdracht 3.3.
+## Opdracht 3.3: if-statement en bitwise AND operatie
 1. Open in VisualStudio Code het `Framework_3_3`-project door de map `opdracht3/Framework_3_3` te openen.
 2. Open het `main.c` bestand in Visual Studio Code en bestudeer dit programma. 
 
@@ -61,14 +60,14 @@ Maak gebruik van een bitwise AND operatie om te controleren of schakelaar 0 is i
 - Pas het programma nu zodanig aan, dat uitsluitend schakelaar 2 deze functie heeft. Het indrukken van een andere schakelaar mag geen invloed hebben.
 
 
-## Opdracht 3.4. 
+## Opdracht 3.4: if-statement en bitwise AND operatie
 1. Open in VisualStudio Code het `Framework_3_4`-project door de map `opdracht3/Framework_3_4` te openen.
 2. Open het `main.c` bestand in Visual Studio Code en bestudeer dit programma. 
 3. Maak een programma dat de LEDs laat branden zolang een willekeurige schakelaar is ingedrukt. Na het loslaten van de schakelaar blijven de LEDs nog 1 seconde branden.
 4. Pas het programma nu zodanig aan, dat uitsluitend schakelaar 3 deze functie heeft. Het indrukken van een andere schakelaar mag geen invloed hebben.
 
 
-## Opdracht 3.5.
+## Opdracht 3.5: bitwise operaties en herhalingsstructuren
 1. Open in VisualStudio Code het `Framework_3_5`-project door de map `opdracht3/Framework_3_5` te openen.
 2. Open het `main.c` bestand in Visual Studio Code en bestudeer dit programma. 
 

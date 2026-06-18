@@ -1,6 +1,5 @@
 # Opdracht 1: Oefenen met PSD's
-
-> Deze opdracht moet nog worden herschreven.
+In deze opdracht ga je aan de slag met het maken van programma's in Structorizer. Structorizer is een tool waarmee je programma's kunt ontwerpen en simuleren met behulp van Programma Stroom Diagrammen (PSD's). In deze opdracht leer je hoe je de basisconstructies van programmeren kunt toepassen in PSD's en hoe je deze kunt uitvoeren en debuggen met de Executor-functie van Structorizer. 
 
 ## Opdracht 1.1: Structorizer en Java installeren
 
