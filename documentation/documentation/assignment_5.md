@@ -1,137 +1,126 @@
-# Opdracht 5:Simulatie van signaallamp-besturing
-
+# Opdracht 5: Simulatie van signaallamp-besturing
 
 ## Inleiding
 
-In dit practicum worden de volgende functies geïmplementeerd die nodig zijn voor de simulatie van het volledige programma voor de besturing van de signaallampen:
+In dit practicum implementeer je functies die nodig zijn voor de simulatie van het volledige besturingsprogramma van de signaallampen:
 
-- bool IsSyncEdgeDetected(void) – zie week 5
-- uint8_t GetPLCData(void)
-- uint8_t GetFunctionCode(uint8_t inputData)
-- void ControlLamps (uint8_t functionCode)
-- void SetAcknowledge(void) 
-- void WaitUntilSyncReleased(void)
-- void ClearAcknowledge(void)
-- void SetSyncLed(bool ledOn)
+- `bool IsSyncEdgeDetected(void)` (zie week 5)
+- `uint8_t GetPLCData(void)`
+- `uint8_t GetFunctionCode(uint8_t inputData)`
+- `void ControlLamps(uint8_t functionCode)`
+- `void SetAcknowledge(void)`
+- `void WaitUntilSyncReleased(void)`
+- `void ClearAcknowledge(void)`
+- `void SetSyncLed(bool ledOn)`
 
-Deze functies komen overeen met de functies die in het PSD van het volledige programma nodig zijn, zie figuur 1.
+Deze functies komen overeen met de functies in het PSD van het volledige programma (figuur 1).
 
- 
+*Figuur 1. PSD van het volledige besturingsprogramma*
 
-Figuur 1.	PSD van het volledige besturingsprogramma
-
-
- 
 :::{tip}
-
-- Het is niet verplicht om PSD’s te maken, maar gebruik ervan is uiteraard wel toegestaan om zaken te verduidelijken.
-
-- Maak voor dit practicum gebruik van het framework programma FrameworkWeek8.zip op Brightspace. Extract dit bestand in een geschikte directory, bij voorkeur op je homedrive op het Avans netwerk. Open hierna de file FrameworkWeek8.atsln met Microchip Studio. Voeg op de aangegeven plaatsen de uitwerkingen van onderstaande opdrachten in.
-
-- Demonstreer de uitwerking van de opdrachten/  programma’s aan de docent.
-
-- Maak gebruik van het bestand FrameworkWeek8.zip. Dit framework wordt in week 8 uitgebreid met alle benodigde functies voor de signaalzuil besturing, en bevat dus aan het eind alle functionele code voor de microcontroller van dit volledige project van periode 1.1!
+- Het is niet verplicht om PSD's te maken, maar dit mag wel als verduidelijking.
+- Gebruik voor dit practicum het framework `FrameworkWeek8.zip` op Brightspace.
+- Pak dit bestand uit in een geschikte map (bij voorkeur op je homedrive op het Avans-netwerk).
+- Open daarna `FrameworkWeek8.atsln` in Microchip Studio.
+- Voeg op de aangegeven plekken de uitwerkingen van onderstaande opdrachten toe.
+- Demonstreer de uitwerking van de opdrachten aan de docent.
 :::
 
-2.	Opdrachten
+## Opdrachten
 
-Maak in de aangegeven volgorde de C-code voor de volgende functies:
+Maak in onderstaande volgorde de C-code voor de volgende functies.
 
-1.	void SetSyncLed(bool ledOn). LED B6 wordt gebruikt als indicatie voor het SYNC bit: ledOn == true: zet de SYNC LED aan, ledOn == false: zet de SYNC LED uit. Deze functie moet dus op de ‘juiste’ momenten worden aangeroepen! (staat niet in PSD). Test deze functie door deze aan te roepen in main() en hiermee een “knipperlicht” te maken.
+1. `void SetSyncLed(bool ledOn)`
+	- LED B6 wordt gebruikt als indicatie voor het SYNC-bit.
+	- `ledOn == true`: zet de SYNC-LED aan.
+	- `ledOn == false`: zet de SYNC-LED uit.
+	- Test deze functie door haar in `main()` aan te roepen en een knipperlicht te maken.
 
-2.	bool IsSyncBitSet(void). Deze functie is benodigd voor de implementatie van de functie IsSyncDetected() in de volgende stap (stap 3).
+2. `bool IsSyncBitSet(void)`
+	- Deze functie is nodig voor de implementatie van `IsSyncEdgeDetected()` in stap 3.
+	- Als het SYNC-bit `1` is, retourneert de functie `true`; bij `0` retourneert de functie `false`.
+	- Laat de functie bij simulatie reageren op drukknop D3, en niet op het echte SYNC-bit.
 
-Als het SYNC-bit de waarde ‘1’ heeft retourneert de functie de waarde ‘true’, als het SYNC-bit de waarde ‘0’ heeft retourneert de functie de waarde ‘false’. 
+	N.B.: op het shield hebben knoppen een geinverteerde werking. Een ingedrukte knop levert logische `1`, een niet-ingedrukte knop logische `0`. Houd hiermee rekening in `IsSyncBitSet()` en in `GetPLCData()`.
 
-N.B.: maak deze functie zodanig, dat deze bij simulatie op drukknop D3 reageert, en NIET op het “echte” SYNC-bit! De reden: de knoppen op het shield hebben een GEÏNVERTEERDE werking: een ingedrukte knop levert een logische ‘1’, een niet-ingedrukte knop een logische ‘0’, dit vanwege de gebruikte hardwareconfiguratie. De plaats waar hiermee rekening moet worden gehouden is in de functie IsSyncBitSet, waar de waarde wordt bepaald van het SYNC-bit, en in de functie GetPLCData. 
+	Breid de test uit stap 1 uit met `IsSyncBitSet()` en controleer of de functie correct reageert op het indrukken van knop D3 (simulatie van activeren van SYNC).
 
-Breid vervolgens de test uit stap 1 uit, of pas het aan, (met SetSyncLed) met de nieuwe functie IsSyncBitSet om te bepalen of de functie correct reageert op het indrukken van knop D3 (indrukken van deze knop simuleert het activeren van het SYNC signaal).
+3. `bool IsSyncEdgeDetected(void)`
+	- Zie ook de theorie van week 5 en het conceptuele PSD in figuur 2.
+	- Deze functie wacht op een opgaande flank (rising edge) van het SYNC-signaal.
+	- Zodra die optreedt, geeft de functie `true` terug.
 
- 
-3.	bool IsSyncEdgeDetected(void). Zie ook theorie van week 5 en het bijbehorende conceptuele PSD in figuur 2:
+	N.B.: deze functie geeft in de praktijk nooit `false` terug, omdat ze blijft wachten op een opgaande flank.
 
- 
+	Breid het testprogramma van stap 2 uit om te controleren of deze functie correct reageert op knop D3.
 
-Figuur 2.	Conceptueel PSD van de functie IsSyncEdgeDetected
+	*Figuur 2. Conceptueel PSD van `IsSyncEdgeDetected`*
 
-Deze functie blijft actief “wachten” op een opgaande flank (“rising edge”) van het SYNC signaal. Zodra deze optreedt geeft de functie de waarde “true” terug. N.B.: deze functie geeft nooit de waarde “false” terug, omdat deze (oneindig) lang wacht op een opgaande flank. Breid het testprogramma van stap 2 uit, of pas het aan, met de nieuwe functie IsSynDetected die is gemaakt in de voorgaande stap 2, om te bepalen of deze functie correct reageert op het indrukken van knop D3.
+4. `void WaitUntilSyncReleased(void)`
+	- Deze functie wacht totdat het SYNC-bit in input-poort B niet meer actief is.
+	- Zie ook het conceptuele PSD in figuur 3.
+	- Laat de functie bij simulatie reageren op drukknop D3, en niet op het echte SYNC-bit.
 
+	Breid het testprogramma van stap 3 uit met deze functie en controleer of de functie correct reageert op het loslaten van knop D3.
 
-4.	void WaitUntilSyncReleased(void). Deze functie “wacht” totdat het SYNC bit in input port B niet meer actief is. Zie ook het conceptuele PSD in figuur 3. N.B.: maak deze functie zodanig, dat deze bij simulatie op drukknop D3 reageert, en NIET op het “echte” SYNC-bit! Breid het testprogramma van stap 3 uit, of pas het aan, met de nieuwe functie WaitUntilSyncReleased, om te bepalen of deze functie correct reageert op het LOSLATEN van knop D3 (loslaten van deze knop simuleert het wegvallen van het SYNC signaal).
+	*Figuur 3. PSD van `WaitUntilSyncReleased`*
 
- 
+5. `void ControlLamps(uint8_t functionCode)`
+	- Stuur de signaallampen correct aan; `functionCode` bepaalt welke lampen aan moeten.
+	- De signaallampen worden aangestuurd via `PORTD`.
+	- Bits `3..0` worden gebruikt voor de lampen.
+	- Bit `7` is het ACK-bit voor de handshake en moet logisch `0` blijven tijdens lampaansturing.
 
-Figuur 3.	PSD van de functie WaitUntilSyncReleased
+	De functie vertaalt de 3-bit functiecode naar een correcte waarde voor bits `3..0` van `PORTD`.
 
- 
-5.	void ControlLamps (uint8_t functionCode). Stuur de signaallampen correct aan,  de parameter functionCode bepaalt welke signaallampen dat zijn, zie figuur 4.
+	Voor `functionCode` geldt: `0 <= functionCode <= 7`. Waarden buiten dit bereik moeten worden genegeerd (lampen blijven ongewijzigd).
 
- 
+	Breid het testprogramma van stap 4 uit. Test alle geldige waarden `0..7` en ook een ongeldige waarde (bijvoorbeeld `45`).
 
-Figuur 4.	Functiecodes en bijbehorende aan te sturen signaallampen
+6. `uint8_t GetPLCData(void)`
+	- Deze functie leest input-poort B en geeft de 4 bits `3..0` terug.
+	- Bits `7..4` moeten worden gemaskeerd naar `0`.
+	- De returnwaarde bevat dus de 3-bit functiecode (bits `2..0`) plus de status van SYNC in bit `3`.
 
-De signaallampen worden aangestuurd via het output register van PORTD, zie figuur 5.
+	Laat de functie bij simulatie reageren op drukknoppen D2..D0 en niet op de echte bits van input-poort B.
 
- 
+	Test in twee stappen:
+	- Roep `GetPLCData()` aan en sla de returnwaarde (`0..15`, oftewel `0x00..0x0F`) op in een variabele.
+	- Geef deze variabele als parameter mee aan `ControlLamps()`.
 
-Figuur 4.	Toekenning van de bits van output port D
+	Voorbeeld: knop 0 en knop 1 ingedrukt geeft waarde `3`, dus groen en geel moeten aan gaan.
 
-De bits 3..0 worden gebruikt voor de aansturing van de signaallampen, bit 7 is het ACK bit (acknowledge) dat gebruikt wordt voor de communicatie-handshake. Dit bit moet dus altijd logisch ‘0’ blijven, als de lampen worden aangestuurd!
+7. `uint8_t GetFunctionCode(uint8_t inputData)`
+	- Input is de waarde van `GetPLCData()`.
+	- De functie moet de 3 bits FC2..FC0 teruggeven.
+	- Maskeer bits `7..4` en bit `3` (SYNC) naar `0`.
+	- De returnwaarde ligt tussen `0` en `7` (`0x00..0x07`).
 
-De functie ControlLamps heeft als taak om de 3 bits functiecode te vertalen naar een correcte aansturing van de bits 3..0 van output port D.
+8. `void SetAcknowledge(void)`
+	- Zet het ACK-bit in `PORTD` op `1`.
+	- Alleen het ACK-bit mag worden aangepast.
+	- Bits `3..0` (signaallampen) moeten ongewijzigd blijven.
 
-Voor functionCode geldt dat 0 ≤ functionCode ≤ 7. Een waarde voor functionCode die buiten dit bereik ligt, moet worden genegeerd (lampen blijven ongewijzigd). Breid het testprogramma van stap 4 uit, of pas het aan, om te bepalen of deze functie de LED’s B3..B0 correct aanstuurt. Test alle geldige waarden 0..7 voor functionCode, én test ook met een ongeldige waarde, bv. 45.
+9. `void ClearAcknowledge(void)`
+	- Zet het ACK-bit in `PORTD` op `0`.
+	- Alleen het ACK-bit mag worden aangepast.
+	- Bits `3..0` (signaallampen) moeten ongewijzigd blijven.
 
+## Uitvoeren simulatie met drukknoppen en LED's
 
- 
-6.	uint8_t GetPLCData(void). Deze functie leest input port B en geef de 4 bits data terug van bits 3..0. Bits 7..4 moeten worden gemaskeerd en moeten worden teruggegeven als ‘0’. Zie figuur 5 voor de toekenning van de bits in input port B. 
+In de theorieles is uitgelegd hoe de simulatie wordt uitgevoerd om de volledige code functioneel te testen:
 
+1. Simuleer een functiecode tussen `0` en `7` door 0 of meer knoppen D2..D0 in te drukken. Houd deze knoppen ingedrukt.
+2. Druk vervolgens op knop D3 om een opgaande flank van het SYNC-signaal te simuleren.
+3. Bij correcte simulatie gaan LED's B3..B0 aan, evenals de SYNC-LED (B6).
 
- 
+	- LED B0 simuleert rood.
+	- LED B1 simuleert geel.
+	- LED B2 simuleert groen.
+	- LED B3 simuleert blauw.
 
-Figuur 5.	Toekenning van de bits in input port B
-
-
-Deze returnwaarde van GetPLCData bevat dus zowel de 3-bits function code van bits 2..0, als de waarde (“status”) van het SYNC-bit in bit 3.
-
-N.B.: maak deze functie zodanig, dat deze bij simulatie op drukknoppen D2..D0 reageert, en NIET op de “echte” bits van input port B. Breid het testprogramma van stap 5 uit, of pas het aan, om te bepalen of deze functie de juiste waarde teruggeeft van de knoppen D2..D0. Dit gebeurt in 2 stappen:
-- Roep de functie GetPLCData aan, en bewaar de return value (die ligt tussen 0 en 15, ofwel 0x00 en 0x0F) in een variabele
-- Geef deze variabele mee als parameter aan de functie ControlLamps.
-- Voorbeeld: het indrukken van knop 0 en knop 1 geeft als resultaat de waarde 3, dat betekent dat zowel de groene als de gele LED aan moeten gaan (functiecode = 3).
-
-
-7.	uint8_t GetFunctionCode(uint8_t inputData). Deze functie heeft als input de waarde die de functie GetPLCData heeft teruggegeven, en bevat de 8 bits zoals aangegeven in bovenstaande figuur 5. Deze functie moet de waarde teruggeven van de 3 bits FC2..FC0, die gebruikt wordt om naderhand de juiste signaal-lampen aan te zetten. 
-
-De functie maskeert dus zowel de bits 7..4 en bit 3 (het SYNC bit) met een ‘0’en geeft een returnwaarde tussen 0 en 7 (0x00 en 0x07).
-
-
-8.	void SetAcknowledge(void). Deze functie set het ACK-bit in PORTD op “1”, zie ook figuur 4. N.B.: UITSLUITEND het ACK-bit moet worden geset, de overige bits 3..0 die de signaallampen aan- of uitzetten, moeten dus ONGEWIJZIGD blijven!! Gebruik dus de juiste bit-set en/of bit-clear operatie!
-
-
-9.	void ClearAcknowledge(void). Deze functie cleart het ACK-bit in PORTD op “0”, zie ook figuur 4. N.B.: UITSLUITEND het ACK-bit moet worden gecleard, de overige bits 3..0 die de signaallampen aan- of uitzetten, moeten dus ONGEWIJZIGD blijven!! Gebruik dus de juiste bit-set en/of bit-clear operatie!
-
-
- 
-3.	Uitvoeren simulatie met de drukknoppen en de LED’s
-
-In de theorieles is aangegeven hoe de simulatie moet gebeuren om de volledige code functioneel te testen. Doe dit als volgt:
-
-1.	Simuleer een functiecode met een waarde tussen 0 en 7 door het indrukken van 0 of meer van de drukknoppen D2..D0 (maximaal 3 vingers nodig…). Houd de gewenste knoppen ingedrukt.
-
-2.	Druk vervolgens op drukknop D3 om een opgaande flank van het SYNC signaal te simuleren.
-
-3.	Bij een correcte simulatie gaan de bijbehorende LED’s B3..B0 aan, evenals de SYNC LED (LED B6).
-
-- LED B0 simuleert de kleur ROOD van de lampzuil
-- LED B1 simuleert de kleur GEEL van de lampzuil
-- LED B2 simuleert de kleur GROEN van de lampzuil
-- LED B3 simuleert de kleur BLAUW van de lampzuil
-
-4.	Bij een correcte simulatie gaat ook LED B7 aan (meest rechter LED): op het shield is deze nl. rechtstreeks gekoppeld aan het ACK (acknowledge) signaal.
-
-5.	Laat de drukknoppen D2..D0 los.
-
-6.	Laat drukknop D3 los, dit simuleert het inactief worden van het SYNC signaal.
-
-7.	Bij een correcte simulatie gaat zowel de SYNC LED (LED B7) als de ACK LED (LED B6) uit. De LED’s B3..B0 houden hun waarde!
+4. Bij correcte simulatie gaat ook LED B7 aan (meest rechter LED), omdat deze op het shield direct gekoppeld is aan ACK.
+5. Laat de knoppen D2..D0 los.
+6. Laat knop D3 los (simulatie van inactief worden van SYNC).
+7. Bij correcte simulatie gaan SYNC (B6) en ACK (B7) uit. LED's B3..B0 houden hun waarde.
 

@@ -1,80 +1,68 @@
 # Opdracht 4: Oefenen met functies in C
 
-
-
 ## Inleiding
 
-In dit practicum wordt geoefend met functies in de taal C.
+In dit practicum oefen je met functies in de programmeertaal C.
 
-:::{tip}
-
-- Het is niet verplicht om PSD’s te maken, maar gebruik ervan is uiteraard wel toegestaan om zaken te verduidelijken.
-
-- Maak voor dit practicum gebruik van het framework programma FrameworkWeek6.zip op Brightspace. Extract dit bestand in een geschikte directory, bij voorkeur op je homedrive op het Avans netwerk. Open hierna de file FrameworkWeek6.atsln met Microchip Studio. Voeg op de aangegeven plaatsen de uitwerkingen van onderstaande opdrachten in.
-
-- Demonstreer de uitwerking van de opdrachten/ programma’s aan de docent.
-
-- Maak gebruik van het bestand FrameworkWeek6.zip.
+:::{note}
+Tijdens de uitvoering van deze opdracht houd je een rapportage bij. Gebruik hiervoor het document `Rapportage_Opdracht_4.docx` in de map `opdracht4` van de microcontrollers workshop. Dit bestand lever je in op Brightspace.
 :::
 
-## Opdracht 4.1: Implementatie en gebruik van een eenvoudige functie
+:::{tip}
+- Het is niet verplicht om PSD's te maken, maar dit mag wel als je daarmee je uitwerking kunt verduidelijken.
+- Gebruik bij deze opdrachten het project `Framework_4` als startpunt. Maak voor elke deelopdracht een aparte kopie, met een duidelijke naam die overeenkomt met de opdracht (bijvoorbeeld `Framework_4_1` voor opdracht 4.1).
+:::
 
-1.	Implementeer in de functie main() van FrameworkWeek6.c een knipperlicht, waarbij de LED’s zijn aangesloten op output poort D. Maak gebruik van code (= kopieer) van vorige practica
+## Opdracht 4.1: Eenvoudige functie implementeren en gebruiken
 
-2.	Maak vervolgens de (zéér eenvoudige, met een body van één regel!) functies:
+1. Implementeer in de functie `main()` van je project `Framework_4_1` een knipperlicht met de LED's op output-poort D. Gebruik eventueel code uit eerdere opdrachten.
+2. Maak vervolgens de volgende eenvoudige functies (elk met een body van een regel):
 
-- void LedsOn(void): aanroepen van deze functie zet alle LED’s op poort D AAN
-- void LedsOff(void): aanroepen van deze functie zet alle LED’s op poort D UIT
+   - `void LedsOn(void)`: zet alle LED's op poort D aan.
+   - `void LedsOff(void)`: zet alle LED's op poort D uit.
 
-3.	vervang nu in main() de code waarmee de LED’s worden aangezet en uitgezet, door de juiste aanroep van de functies LedsOn en LedsOff.
+3. Vervang in `main()` de bestaande code voor LED aan/uit door aanroepen van `LedsOn()` en `LedsOff()`.
+4. Controleer of het knipperlicht nog steeds correct werkt.
 
-4.	Controleer vervolgens of het knipperlicht nog steeds correct functioneert.
+## Opdracht 4.2: Functie met returnwaarde implementeren en gebruiken
 
+Maak een kopie van `Framework_4_1` en noem deze `Framework_4_2`. Open daarna de map van `Framework_4_2` in Visual Studio Code en open `main.c`.
 
-## Opdracht 4.2: Implementatie en gebruik van functie met een returnwaarde
+In opdracht 3 is het gedrag van de LED's en drukknoppen op het shield bepaald. De LED's zijn aangesloten op output-poort D van de microcontroller, de drukknoppen op input-poort B.
 
-Maak voor de uitwerking van deze opdracht een nieuw Microchip Studio project aan, en maak gebruik van (= kopieer) de code en bijbehorende functies LedsOn en LedsOff uit opdracht 1.
+Beantwoord eerst de volgende vragen als voorbereiding:
 
-In het practicum van week 4 is het gedrag van de LED’s en de drukknoppen bepaald op het shield. De LED’s zijn aangesloten is op output port D van de microcontroller, de drukknoppen zijn aangesloten op input port B van de microcontroller.
+- Vraag 1: een uitgang van poort D wordt op logische `1` gezet. Is de bijbehorende LED dan aan of uit?
+- Vraag 2: een ingang van poort B wordt uitgelezen als logische `1`. Is de bijbehorende drukknop dan ingedrukt of niet ingedrukt?
 
-Beantwoord eerst de volgende vragen als voorbereiding op de volgende opdrachten:
+Werk daarna de volgende stappen uit:
 
-- Vraag 1: een uitgang van port D wordt op logisch ‘1’ gezet. Is de bijbehorende LED dan AAN of is deze UIT?
-
-- Vraag 2: een ingang van port B wordt uitgelezen als een logische ‘1’. Is de bijbehorende drukknop dan INGEDRUKT of NIET INGEDRUKT?
-
-
-1.	Pas het programma met het knipperlicht van opdracht 1 zodanig aan, dat het knipperlicht uitsluitend knippert als er één of meer (willekeurige) knop(pen) is/zijn ingedrukt. De knoppen zijn aangesloten op poort B. Reminder: van poort B worden uitsluitend de bits 0..3 gebruikt voor de knoppen. Maak gebruik van een masker en een bitwise AND functie (&) om deze bits te selecteren.
-
-2.	Implementeer vervolgens de functie bool IsEenKnopIngedrukt(void), die de waarde true teruggeeft als er minimaal één knop is ingedrukt, en de waarde false als er geen enkele knop is ingedrukt.
-
-3.	Gebruik hierna de functie IsEenKnopIngedrukt in het hoofdprogramma op de volgende manier:
+1. Pas het knipperlicht uit opdracht 4.1 zo aan dat het alleen knippert als een of meer knoppen worden ingedrukt. Let op: voor de knoppen op poort B worden alleen bits `0..3` gebruikt. Gebruik een masker en een bitwise AND (`&`) om deze bits te selecteren.
+2. Implementeer de functie `bool IsEenKnopIngedrukt(void)`. Deze geeft `true` terug als minimaal een knop is ingedrukt, anders `false`.
+3. Gebruik `IsEenKnopIngedrukt()` in het hoofdprogramma, bijvoorbeeld:
 
 ```cpp
-if(IsKnopIngedrukt()== true)
+if (IsEenKnopIngedrukt() == true)
 {
     // knipperlicht code
 }
 ```
- 
 
+## Opdracht 4.3: Functie met parameter en returnwaarde
 
+In opdracht 4.2 gaf `IsEenKnopIngedrukt()` aan of er minimaal een knop was ingedrukt. In deze opdracht maak je een nieuwe functie die controleert of een specifieke knop is ingedrukt. Het knopnummer (`0` t/m `3`, overeenkomend met D0 t/m D3 op het shield) wordt een parameter.
 
- 
-Opdracht 3.	Implementatie en gebruik van functie met een parameter en een returnwaarde
-
-In opdracht 2 geeft de functie IsEenKnopIngedrukt de waarde true terug als er minimaal één knop is ingedrukt. In opdracht 3 wordt een nieuwe functie gemaakt, die de waarde true teruggeeft als er een specifieke knop wordt ingedrukt met een knopnummer tussen 3 en 0 (komt overeen met de knoppen D3..D0 is op het shield). Het knopnummer wordt nu dus een parameter van die nieuwe functie.
-
-1.	Implementeer de functie bool IsKnopIngedrukt(uint8_t knopNummer), die de waarde true teruggeeft als de knop met knopNummer is ingedrukt, en de waarde false als die knop niet is ingedrukt. De waarde van knopNummer moet hierbij liggen tussen 0 en 3. Gebruik hierbij als uitgangspunt de code van de vorige opdracht 2 van de functie IsEenKnopIngedrukt. N.B.: deze functie moet dus voor ELKE waarde van knopNummer tussen 0 en 3 correct functioneren!
-
-2.	Gebruik nu de functie IsKnopIngedrukt(uint8_t knopNummer) in het hoofdprogramma. Stel dat het knipperlicht alleen moet knipperen als knop 3 is ingedrukt, dan gaat dit als volgt:
+1. Implementeer de functie `bool IsKnopIngedrukt(uint8_t knopNummer)`. Deze geeft `true` terug als de knop met nummer `knopNummer` is ingedrukt, anders `false`. Zorg dat dit correct werkt voor alle waarden van `knopNummer` tussen `0` en `3`.
+2. Gebruik `IsKnopIngedrukt(uint8_t knopNummer)` in het hoofdprogramma. Als het knipperlicht bijvoorbeeld alleen bij knop 2 mag knipperen:
 
 ```cpp
-knopNummer = 2;
-if(IsKnopIngedrukt(knopNummer)== true)
+uint8_t knopNummer = 2;
+if (IsKnopIngedrukt(knopNummer) == true)
 {
     // knipperlicht code
 }
 ```
- 
 
+## Opdracht 4.4: Inleveren
+
+Lever je rapportage in op Brightspace. Gebruik hiervoor het document `Rapportage_Opdracht_4.docx` in de map `opdracht4` van de microcontrollers workshop. In dit document vul je de antwoorden op de vragen en je conclusies per opdracht in.

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root xmlns:nsd="https://structorizer.fisch.lu" version="3.32-34" preRepeat="until " postFor="to" preReturn="return" postForIn="in" preWhile="while " output="OUTPUT" input="INPUT" preFor="for" preExit="exit" preLeave="leave" ignoreCase="true" preThrow="throw" preForIn="foreach" stepFor="by" author="rasmsmee" created="2026-01-06" changedby="rasmsmee" changed="2026-01-22" origin="Structorizer 3.32-34" text="&#34;ZR12_week_1_Framework_1&#34;" comment="" color="ffffff" type="program" style="nice">
+	<children>
+		<instruction text="&#34;int a&#60;-0&#34;,&#34;int b&#60;-5&#34;,&#34;int totaal&#60;-0&#34;,&#34;int tellerKlein&#60;-0&#34;,&#34;int tellerGroot&#60;-0&#34;" comment="&#34;&#34;" color="ffffff" rotated="0" disabled="0"></instruction>
+		<while text="&#34;while (true)&#34;" comment="" color="ffffff" disabled="0">
+			<qWhile>
+				<instruction text="&#34;INPUT &#34;&#34;geef een waarde voor a&#34;&#34;, a&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;totaal&#60;-totaal+1&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<alternative text="&#34;a&#60;b&#34;" comment="" color="ffffff" branch_colors="," disabled="0">
+					<qTrue>
+						<instruction text="&#34;tellerKlein&#60;-tellerKlein+1&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qTrue>
+					<qFalse>
+						<instruction text="&#34;tellerGroot&#60;-tellerGroot+1&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+					</qFalse>
+				</alternative>
+				<instruction text="&#34;OUTPUT &#34;&#34;tellerK = &#34;&#34;, tellerKlein, &#34;&#34; TellerG = &#34;&#34;, tellerGroot&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+				<instruction text="&#34;OUTPUT &#34;&#34;totaal ingevoerd: &#34;&#34;, totaal&#34;" comment="" color="ffffff" rotated="0" disabled="0"></instruction>
+			</qWhile>
+		</while>
+	</children>
+</root>

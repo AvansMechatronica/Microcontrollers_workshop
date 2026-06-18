@@ -1,52 +1,52 @@
 # Opdracht 2: Kennismaken met de Arduino Uno en PlatformIO
- In deze opdracht maak je kennis met de Arduino Uno en de bijbehorende programmeeromgeving PlatformIO. Je leert hoe je een programma kunt schrijven in de programmeertaal C, hoe je dit programma kunt compileren en flashen naar de Arduino Uno, en hoe je de LED’s en schakelaars op het LED / switch shield van de Arduino Uno kunt aansturen en uitlezen.
+
+In deze opdracht maak je kennis met de Arduino Uno en de bijbehorende programmeeromgeving PlatformIO. Je leert hoe je een programma schrijft in C, hoe je dit programma compileert en flasht naar de Arduino Uno, en hoe je de LED's en schakelaars op het LED/switch-shield aanstuurt en uitleest.
 
 :::{note}
-Tijdens de uitvoering van deze opdracht houd je een rapportage bij. Je kunt hiervoor het document `Rapportage_Opdracht_2.docx` gebruiken welke in de map `opdracht2` van de microcontrollers workshop staat. Dit bestand lever je in op Brightspace.
+Tijdens de uitvoering van deze opdracht houd je een rapportage bij. Gebruik hiervoor het document `Rapportage_Opdracht_2.docx` in de map `opdracht2` van de microcontrollers workshop. Dit bestand lever je in op Brightspace.
 :::
 
-## Opdracht 2.1: Installatie Visual Studio Code en PlatformIO
+## Opdracht 2.1: Installatie van Visual Studio Code en PlatformIO
+
 :::{note}
-Deze opdracht voer je in je eigen tijd uit voordat je aan de volgende opdrachten kunt beginnen. Je hoeft deze opdracht dus niet in het practicum uit te voeren, maar je moet deze opdracht wel hebben uitgevoerd voordat je aan de volgende opdrachten kunt beginnen. Als je de software nog niet hebt geïnstalleerd heb je geen toegang tot het practicum.
+Deze opdracht voer je in je eigen tijd uit, voordat je met het practicum begint. Als je de software nog niet hebt geinstalleerd, heb je geen toegang tot het practicum.
 :::
 
-Voor het programmeren van de Arduino Uno wordt gebruik gemaakt van Visual Studio Code in combinatie met de PlatformIO extension. Deze software is gratis te downloaden en te gebruiken. Volg de volgende stappen om deze software te installeren:
-1.	Download en installeer Visual Studio Code van https://code.visualstudio.com/
-2.	Open Visual Studio Code en ga naar de Extensions (Ctrl+Shift+X)	
-3.	Zoek naar PlatformIO en installeer deze extension
-4.	Na installatie van PlatformIO, herstart Visual Studio Code	
+Voor het programmeren van de Arduino Uno gebruik je Visual Studio Code met de PlatformIO-extensie. Volg deze stappen:
 
+1. Download en installeer Visual Studio Code via <https://code.visualstudio.com/>.
+2. Open Visual Studio Code en ga naar Extensions (`Ctrl+Shift+X`).
+3. Zoek op `PlatformIO` en installeer de extensie.
+4. Herstart Visual Studio Code na installatie.
 
 ## Opdracht 2.2: Een programma uitvoeren op de Arduino Uno
 
-De Arduino Uno wordt gebruikt in combinatie met een zgn. shield, dat nodig is voor communicatie met de PLC en dat de signaalzuil gaat aansturen. In het practicum worden de schakelaars en de LED’s op dit shield gebruikt. In figuur 1 zijn deze aangegeven.
-
+De Arduino Uno wordt gebruikt in combinatie met een shield dat nodig is voor communicatie met de PLC en het aansturen van de signaalzuil. In het practicum gebruik je de schakelaars en LED's op dit shield (zie figuur 1).
 
 ![Image](../images/arduino_shield.png)
 
+*Figuur 1. Positie van schakelaars en LED's*
 
-***Figuur 1.	Positie van schakelaars en LED’s***	
+Om een programma op de Arduino Uno uit te voeren, moet het programma vanaf de pc naar de Arduino worden geflasht. Dit doe je met PlatformIO.
 
-
-Om een programma op de Arduino Uno uit te voeren moet dit programma worden gedownload (‘geflasht’) van de PC naar de Arduino. We doen dit met behulp van PlatformIO. Volg de volgende stappen om een programma te flashen naar de Arduino Uno:
-
-1. Open in VisualStudio Code het `FlashLeds`-project door de map `opdracht2/FlashLeds` te openen. Gebruik hiervoor in Visual Studio Code de optie `File > Open Folder` en selecteer de map `opdracht2/FlashLeds`. Je zou nu het volgende moeten zien in Visual Studio Code:
+1. Open in Visual Studio Code het project `FlashLeds` door de map `opdracht2/FlashLeds` te openen (`File > Open Folder`).
 
 ![image](../images/vsc_platformio.jpg)
-**Figuur 2.	Visual Studio Code met PlatformIO extension**
 
-2. Compileer het programma door in de beneden balk van Visual Studio Code te klikken op het vinkje (check) icoon, of door de sneltoets Ctrl+Alt+B te gebruiken. Controleer of er geen fouten zijn tijdens het compileren.
+*Figuur 2. Visual Studio Code met PlatformIO-extensie*
+
+2. Compileer het programma met het vinkje (check-icoon) in de onderste balk of met `Ctrl+Alt+B`. Controleer of er geen compileerfouten zijn.
+
 ![image](../images/Compile.JPG)
 
-3. Plaats het shield op de Arduino Uno en sluit de Arduino Uno aan op de PC met behulp van een USB-kabel. 
+3. Plaats het shield op de Arduino Uno en sluit de Arduino Uno met een USB-kabel aan op de pc.
+4. Flash het programma met het upload-icoon in de onderste balk of met `Ctrl+Alt+U`. Controleer of de LED's op het shield knipperen zoals verwacht.
 
-4. Flash het programma naar de Arduino door in de beneden balk van Visual Studio Code te klikken op het pijltje (upload) icoon, of door de sneltoets Ctrl+Alt+U te gebruiken. Controleer of de LED’s op het shield knipperen zoals verwacht.
 ![image](../images/Upload.JPG)
 
-## Opdracht 2.3: Een eenvoudig programma in de taal C
+## Opdracht 2.3: Een eenvoudig programma in C
 
-Het programma van C-Programma 1 laat zien hoe de LED’s op het shield kunnen worden aangestuurd. In dit programma worden de LED’s steeds 500 ms aan en 500 ms uit gezet, waardoor ze knipperen.
-
+C-programma 1 laat zien hoe de LED's op het shield kunnen worden aangestuurd. In dit programma worden de LED's steeds 500 ms aan en 500 ms uit gezet.
 
 ```cpp
 int main(void)
@@ -67,15 +67,11 @@ int main(void)
 }
 ```
 
+*C-programma 1. Het programma FlashLeds*
 
+Open `main.c` in `opdracht2/FlashLeds/src`.
 
-**C-Programma 1.	Het programma FlashLeds**
-
-Open het bestand door in Visual Studio Code te klikken op het bestand `main.c` in de map `opdracht2/FlashLeds/src`.
-
-
-Pas het programma van C-Programma 1 zodanig aan, dat de LED’s 2 maal zo traag knipperen. Voeg hiervoor de programmaregels in zoals aangegeven in C-Programma 2. Save & compileer het programma en download het op de Arduino. Controleer uiteraard of de LED’s daadwerkelijk 2 maal zo traag knipperen!
-
+Pas C-programma 1 zo aan dat de LED's twee keer zo traag knipperen. Voeg hiervoor de regels toe zoals in C-programma 2. Sla het programma op, compileer het en flash het naar de Arduino.
 
 ```cpp
 int main(void)
@@ -98,140 +94,121 @@ int main(void)
 }
 ```
 
-**C-Programma 2.	Het aangepaste programma FlashLeds**
+*C-programma 2. Het aangepaste programma FlashLeds*
 
- 
-## Opdracht 2.4.	Onderzoek aansturen LED’s
+## Opdracht 2.4: Onderzoek aansturen LED's
 
+Een LED kan op twee manieren op een microcontroller worden aangesloten (figuur 3 en figuur 4). Onderzoek op welke manier de LED's op het Arduino LED/switch-shield zijn aangesloten:
 
-
-
-Een LED kan in principe op de volgende manieren op een microcontroller worden aangesloten, zie figuur 3 en figuur 4. De vraag is nu: op welke van deze mogelijke 2 manieren zijn de LED’s nu daadwerkelijk aangesloten op het Arduino LED / switch shield? Onderzoek dit door:
-
-1.	eerst een aanname te maken over het gedrag van de LED’s, en vervolgens
-
-2.	deze aanname te controleren met een programma. Gebruik PORTD om de LED’s aan te sturen.
-
+1. Maak eerst een aanname over het gedrag van de LED's.
+2. Controleer deze aanname met een programma. Gebruik `PORTD` om de LED's aan te sturen.
 
 ::::{grid} 2
-:::{grid-item-card} 
+:::{grid-item-card}
 ![Image](../images/led_active_low.png)
 
-**Figuur 3. Output / LED aangesloten
-op voedingsspanning**	
+**Figuur 3. Output/LED aangesloten op voedingsspanning**
 :::
 :::{grid-item-card}
 ![Image](../images/led_active_high.png)
-**Figuur 4. Output / LED aangesloten
-op ground**
 
-Output / LED aangesloten
-op ground
-
+**Figuur 4. Output/LED aangesloten op ground**
 :::
 ::::
 
-1. Open in VisualStudio Code het `LedTest`-project door de map `opdracht2/LedTest` te openen. Gebruik hiervoor in Visual Studio Code de optie `File > Open Folder` en selecteer de map `opdracht2/LedTest`.
+Werk daarna uit:
+
+1. Open in Visual Studio Code het project `LedTest` door de map `opdracht2/LedTest` te openen (`File > Open Folder`).
 2. Flash het programma naar de Arduino Uno.
-3. Open het `main.c` bestand in Visual Studio Code en bestudeer dit programma. Probeer te begrijpen wat dit programma doet en hoe het werkt. Controleer of dit programma daadwerkelijk de LED’s aanstuurt zoals verwacht.
+3. Open `main.c` en bestudeer dit programma. Controleer of dit programma de LED's aanstuurt zoals verwacht.
+4. Vul tabel 1 in. Neem aan: logische `1` is +5 Volt en logische `0` is 0 Volt. Vul per figuur in of de LED `AAN` of `UIT` is.
 
-4.	Als een logische 1 op de output van de microcontroller wordt voorgesteld door +5 Volt, en een logische 0 door 0 volt, geef dan in de volgende tabel aan, wanneer 	en LED aan of uit is. Vul in deze tabel AAN of UIT in. Gebruik in het programma LedTest PORTD als output poort voor de LED’s.
-
-
-|  | Output = 0 | Output = 1
+| | Output = 0 | Output = 1 |
 | --- | --- | --- |
-Figuur 3|	
-Figuur 4| 
+| Figuur 3 | | |
+| Figuur 4 | | |
 
+*Tabel 1. Gedrag van LED's op de uitgang van een microcontroller*
 
-**Tabel 1.	Gedrag van LED’s op de uitgang van een microcontroller (invullen)**
+5. Trek een conclusie:
 
-5.	Op welke manier zijn nu de LED’s op het LED / switch shield van de Arduino Uno aangesloten, m.a.w.: gaat een LED branden bij een ‘0’ op de uitgang van de microcontroller, of juist bij een ‘1’? 
+- Een LED is `AAN` als de output een logische ... is.
+- Een LED is `UIT` als de output een logische ... is.
 
-*Conclusie:*
+## Opdracht 2.5: Onderzoek inlezen schakelaars
 
-- Een LED is AAN als de output een logische … is
-- Een LED is UIT als de output een logische … is
- 
-## Opdracht 2.5: Onderzoek inlezen schakelaars 
-
-1. Open in VisualStudio Code het `SwitchTest`-project door de map `opdracht2/SwitchTest` te openen. Gebruik hiervoor in Visual Studio Code de optie `File > Open Folder` en selecteer de map `opdracht2/SwitchTest`.
+1. Open in Visual Studio Code het project `SwitchTest` door de map `opdracht2/SwitchTest` te openen (`File > Open Folder`).
 2. Flash het programma naar de Arduino Uno.
-3. Open het `main.c` bestand in Visual Studio Code en bestudeer dit programma. Probeer te begrijpen wat dit programma doet en hoe het werkt.
+3. Open `main.c`, bestudeer het programma en probeer te begrijpen wat het doet.
 
-Maak voor de uitvoering van deze opdracht gebruik van het programma en de kennis die je hebt gebruikt bij opdracht 3 (LedTest).
+Gebruik voor deze opdracht de kennis uit `LedTest` (opdracht 2.4).
 
-LET OP: omdat we slechts 4 schakelaars hebben (en 8 LED’s), kijken we bij deze opdracht UITSLUITEND naar het gedrag van de LED’s B3…B0, d.w.z de 4 meest RECHTSE LED’s op het shield. Kijk dus NIET naar de LED’s 7..4 links op het shield, deze hebben hier nl. een andere functie en kunnen aan of uit zijn.
+:::{warning}
+We hebben 4 schakelaars en 8 LED's. Kijk in deze opdracht alleen naar LED's B3..B0 (de 4 meest rechtse LED's). LED's 7..4 hebben een andere functie.
+:::
 
-Op 4 ingangen van poort B zijn 4 schakelaars aangesloten. Een schakelaar kan in principe op de volgende manieren op een microcontroller worden aangesloten, zie figuur 5 en figuur 6. In deze opdracht wordt bepaald op welke van deze mogelijke 2 manieren de schakelaars nu daadwerkelijk zijn geconfigureerd op het Arduino LED / switch shield.
+Een schakelaar kan op twee manieren op een microcontroller worden aangesloten (figuur 5 en figuur 6). Onderzoek hoe de schakelaars op het Arduino LED/switch-shield zijn geconfigureerd.
 
-
- ::::{grid} 2
-:::{grid-item-card} 
+::::{grid} 2
+:::{grid-item-card}
 ![Image](../images/switch_active_low.png)
-**Figuur 5. Input / schakelaar aangesloten
-op ground**	
+
+**Figuur 5. Input/schakelaar aangesloten op ground**
 :::
 :::{grid-item-card}
 ![Image](../images/switch_active_high.png)
-**Figuur 6. Input / schakelaar aangesloten
-op voedingsspanning**
 
-Input / schakelaar aangesloten
-op voedingsspanning
+**Figuur 6. Input/schakelaar aangesloten op voedingsspanning**
 :::
-::::			 
+::::
 
-4.	Als een logische 1 op de input van de microcontroller wordt voorgesteld door +5 Volt, en een logische 0 door 0 volt, geef dan in de volgende tabel aan, wanneer een schakelaar is ingedrukt of losgelaten. Vul in deze tabel IN of LOS in.
+4. Vul tabel 2 in. Neem aan: logische `1` is +5 Volt en logische `0` is 0 Volt. Vul per figuur in of de schakelaar `IN` of `LOS` is.
 
-|  | Input = 0 | Input = 1
+| | Input = 0 | Input = 1 |
 | --- | --- | --- |
-Figuur 5 |	
-Figuur 6| 
+| Figuur 5 | | |
+| Figuur 6 | | |
 
+*Tabel 2. Gedrag van schakelaars op de ingang van een microcontroller*
 
+5. Onderzoek daarna of een ingedrukte schakelaar een `0` of juist een `1` oplevert op de ingang van de microcontroller.
+6. Maak een aanname.
+7. Controleer de aanname met een programma.
 
-**Tabel 2. Gedrag van schakelaars op de ingang van een microcontroller**
-
-5.	Op welke manier zijn nu de schakelaars aangesloten? M.a.w.: stelt een ingedrukte schakelaar een ‘0’ voor op de ingang van de microcontroller, of juist een ‘1’? Onderzoek dit door:
-
-6.	een aanname te maken, en vervolgens
-
-7.	deze aanname te controleren met een programma. 
-
-Gebruik input poort B (PINB) om 4 schakelaars tegelijk in te lezen. Maak ook gebruik van de conclusies die getrokken zijn uit het gedrag van de LED's in de vorige opdracht. Lees vooral ook de volgende 2 aanwijzingen!
+Gebruik `PINB` om vier schakelaars tegelijk in te lezen. Gebruik ook de conclusies uit de vorige opdracht over het LED-gedrag.
 
 *Aanwijzingen:*
 
-- maak een programma dat voortdurend de status van de schakelaars weergeeft op de LED’s (kijk dus alleen naar de 4 RECHTER LED’s, de 4 linker LED’s doen niet mee in deze opdracht)
-
-- Bepaal nu of een ingedrukte schakelaar een ‘0’ geeft op de ingang of juist een ‘1’.
-
+- Maak een programma dat continu de status van de schakelaars weergeeft op de LED's (alleen de 4 rechtse LED's).
+- Bepaal of een ingedrukte schakelaar een `0` of een `1` geeft op de ingang.
 
 *Conclusie:*
 
-- Een schakelaar die is ingedrukt genereert een logische … op de ingang van de microcontroller
-- Een schakelaar die is losgelaten genereert een logische … op de ingang van de microcontroller
- 
+- Een ingedrukte schakelaar genereert een logische ... op de ingang van de microcontroller.
+- Een losgelaten schakelaar genereert een logische ... op de ingang van de microcontroller.
+
 ## Opdracht 2.6: Teller
 
-1. Open in VisualStudio Code het `Teller`-project door de map `opdracht2/Teller` te openen. Gebruik hiervoor in Visual Studio Code de optie `File > Open Folder` en selecteer de map `opdracht2/Teller`.
+1. Open in Visual Studio Code het project `Teller` door de map `opdracht2/Teller` te openen (`File > Open Folder`).
 2. Flash het programma naar de Arduino Uno.
-3. Open het `main.c` bestand in Visual Studio Code en bestudeer dit programma. Probeer te begrijpen wat dit programma doet en hoe het werkt.
+3. Open `main.c`, bestudeer het programma en probeer te begrijpen wat het doet.
 
-Pas dit programma zodanig aan, dat het programma op de LED’s van het LED / switch shield een (binaire) teller laat zien, die elke ½ seconde omhoog telt. De beginwaarde van de teller is 0. Maak, indien nodig, gebruik van een PSD in microAVR om dit vooraf te testen.
+Pas het programma zo aan dat op de LED's van het LED/switch-shield een binaire teller zichtbaar is die elke halve seconde omhoog telt. De beginwaarde van de teller is `0`.
 
-Het programma moet niet alleen het juiste telgedrag vertonen op de LED’s, het moet daarnaast ook een logische, leesbare, begrijpelijke en duidelijke structuur hebben: in dit geval (het programma moet omhoog tellen) betekent het, dat er dus 'ergens' in dit programma een opdracht moet staan met een '+' teken, zoals in:
+Het programma moet niet alleen correct tellen, maar ook logisch en leesbaar opgebouwd zijn. Er moet dus ergens een opdracht staan met een plus-operator, bijvoorbeeld:
 
-teller = teller + 1
+```cpp
+teller = teller + 1;
+```
 
 :::{note}
-Het programma is verkeerd, als dit programma ergens een opdracht bevat van de vorm 
+Het programma is fout als het ergens een opdracht bevat in de vorm:
 
-teller = teller - 1
-
-waarbij er gebruik wordt gemaakt van een min-teken!
+```cpp
+teller = teller - 1;
+```
 :::
 
 ## Opdracht 2.7: Inleveren van de opdrachten
-Vergeet niet om je rapportage in te leveren op Brightspace. Gebruik hiervoor het document `Rapportage_Opdracht_2.docx` welke in de map `opdracht2` van de microcontrollers workshop staat. In dit document kun je de antwoorden op de vragen en de conclusies van de verschillende opdrachten invullen.
+
+Lever je rapportage in op Brightspace. Gebruik hiervoor het document `Rapportage_Opdracht_2.docx` in de map `opdracht2` van de microcontrollers workshop. In dit document vul je de antwoorden op de vragen en je conclusies per opdracht in.

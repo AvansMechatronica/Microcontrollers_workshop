@@ -1,86 +1,86 @@
 # Opdracht 3: Programmeren in C op de Arduino Uno
 
-
-In dit practicum wordt geoefend met operaties op bits en met herhalings- en beslissingsstructuren in de taal C.
-
+In dit practicum oefen je met bitoperaties en met herhalings- en beslissingsstructuren in de taal C.
 
 ## Inleiding
 
-Op de Arduino Uno zijn de 8 LEDS op het shield aangesloten op output poort D (PORTD), en de 4 schakelaars op input poort B (PINB). Input poort B is echter een 8 bit input poort, waarvan alleen bits 3..0 gebruikt worden voor de schakelaars. Bits 7..4 zijn in gebruik voor andere functies van de microcontroller. De actuele waarde van de bits 7..4 is onbekend: er mag nooit worden verondersteld dat ze een specifieke en bekende waarde hebben (0 of 1, dus). De waarde die gelezen wordt van input poort B is dus:
+Op de Arduino Uno zijn de 8 LED's op het shield aangesloten op output-poort D (`PORTD`) en de 4 schakelaars op input-poort B (`PINB`).
+
+Input-poort B is een 8-bit poort, waarvan alleen bits `3..0` worden gebruikt voor de schakelaars. Bits `7..4` worden gebruikt voor andere functies van de microcontroller. De actuele waarde van bits `7..4` is onbekend. Je mag dus nooit aannemen dat deze bits altijd `0` of `1` zijn.
+
+De waarde die van input-poort B wordt gelezen is dus:
 
 ![image](../images/opdracht3_figuur1.jpg)
 
-*Figuur 1. Input port B*
+*Figuur 1. Input-poort B*
 
-Om uitsluitend de waarde van de schakelaars S3 .. S0 in te lezen, is het handig om ervoor te zorgen dat met één of andere bitwise operatie de bits 7..4 altijd als een logische 0 worden geïnterpreteerd. Dit wordt maskeren genoemd, zie figuur 2:
+Om alleen de waarde van schakelaars S3 t/m S0 in te lezen, moet je met een bitwise operatie bereiken dat bits `7..4` altijd als logische `0` worden geïnterpreteerd. Dit heet maskeren (zie figuur 2):
 
 ![image](../images/opdracht3_figuur2.jpg)
 
-*Figuur 2. Maskeren van input port B*
+*Figuur 2. Maskeren van input-poort B*
 
-
-Beantwoord eerst de volgende vraag, alvorens te beginnen aan de uitwerking begint van de opdrachten (na het beantwoorden van deze vraag kunnen onderstaande opdrachten succesvol worden uitgevoerd!)
-
-Welke operatie, en welk masker (dus de waarde van de bits m7..m0) zijn nodig om het gewenste resultaat te krijgen volgens figuur 2?
-
-
-## Opdracht 3.1: if-statement en bitwise AND operatie
-
-1. Open in VisualStudio Code het `Framework_3_1`-project door de map `opdracht3/Framework_3_1` te openen.
-2. Open het `main.c` bestand in Visual Studio Code en bestudeer dit programma. 
-
-3. Maak een programma `main.c` dusdanig dat het de LEDs laat knipperen, zolang één of meer willekeurige schakelaar(s) is/zijn ingedrukt. Als geen schakelaar is ingedrukt, dan zijn de LEDs uit.
-:::{tip}
-- Laat je voor het knipperen van de LEDs inspireren door het programma `FlashLeds` dat je in de opdrachten 2 hebt gebruikt.
-- Maak gebruik van het if-statement
+:::{note}
+Tijdens de uitvoering van deze opdracht houd je een rapportage bij. Gebruik hiervoor het document `Rapportage_Opdracht_3.docx` in de map `opdracht3` van de microcontrollers workshop. Dit bestand lever je in op Brightspace.
 :::
 
-4. Pas het programma nu zodanig aan, dat uitsluitend schakelaar 0 deze functie heeft. Het indrukken van een andere schakelaar mag geen effect hebben.
-:::{tip}
-Maak gebruik van een bitwise AND operatie om te controleren of schakelaar 0 is ingedrukt.
-:::
+Beantwoord eerst de volgende vraag voordat je aan de opdrachten begint. Na het beantwoorden van deze vraag kun je de onderstaande opdrachten correct uitvoeren.
 
- 
-## Opdracht 3.2: if-statement en bitwise AND operatie
-1. Open in VisualStudio Code het `Framework_3_2`-project door de map `opdracht3/Framework_3_2` te openen.
-2. Open het `main.c` bestand in Visual Studio Code en bestudeer dit programma. 
-  - je kunt eventueel ook het programma `main.c` van opdracht 3.1 gebruiken als startpunt voor deze opdracht, maar zorg er dan wel voor dat je dit programma eerst kopieert naar de map `opdracht3/Framework_3_2/src` voordat je aan de uitwerking van deze opdracht begint.
+Welke operatie en welk masker (de waarde van bits `m7..m0`) zijn nodig om het gewenste resultaat te krijgen volgens figuur 2?
 
-3. Maak een programma `main.c` dusdanig dat het de LEDs laat knipperen, zolang één of meer willekeurige schakelaar(s) is/zijn ingedrukt. Als geen schakelaar is ingedrukt, dan blijven de LEDs in de laatste stand staan.
+## Opdracht 3.1: LED's knipperen bij ingedrukte schakelaar
 
-4. Pas het programma nu zodanig aan, dat uitsluitend schakelaar 1 deze functie heeft. Het indrukken van een andere schakelaar mag geen invloed hebben.
-
-
-## Opdracht 3.3: if-statement en bitwise AND operatie
-1. Open in VisualStudio Code het `Framework_3_3`-project door de map `opdracht3/Framework_3_3` te openen.
-2. Open het `main.c` bestand in Visual Studio Code en bestudeer dit programma. 
-
-- Maak een programma zodat de LEDs bij het indrukken van een willekeurige schakelaar 1 seconde gaan branden. Het moet daarbij niet uitmaken hoelang de schakelaar wordt ingedrukt.
-
-- Pas het programma nu zodanig aan, dat uitsluitend schakelaar 2 deze functie heeft. Het indrukken van een andere schakelaar mag geen invloed hebben.
-
-
-## Opdracht 3.4: if-statement en bitwise AND operatie
-1. Open in VisualStudio Code het `Framework_3_4`-project door de map `opdracht3/Framework_3_4` te openen.
-2. Open het `main.c` bestand in Visual Studio Code en bestudeer dit programma. 
-3. Maak een programma dat de LEDs laat branden zolang een willekeurige schakelaar is ingedrukt. Na het loslaten van de schakelaar blijven de LEDs nog 1 seconde branden.
-4. Pas het programma nu zodanig aan, dat uitsluitend schakelaar 3 deze functie heeft. Het indrukken van een andere schakelaar mag geen invloed hebben.
-
-
-## Opdracht 3.5: bitwise operaties en herhalingsstructuren
-1. Open in VisualStudio Code het `Framework_3_5`-project door de map `opdracht3/Framework_3_5` te openen.
-2. Open het `main.c` bestand in Visual Studio Code en bestudeer dit programma. 
-
-Maak een programma dat in een oneindige herhaling:
-
-3. Alle LED’s één voor één aanzet en het resultaat 1 seconde laat zien, te beginnen bij LED 0. De LED’s die aan zijn, blijven aan (bij aanvang zijn alle LED’s uit)
-
-4. Zodra alle LED’s aan zijn, moeten ze weer één voor één worden uitgezet, te beginnen bij LED 0. De LED’s die uit zijn, blijven uit.
+1. Open in Visual Studio Code het project `Framework_3_1` door de map `opdracht3/Framework_3_1` te openen.
+2. Open het bestand `main.c` in Visual Studio Code en bestudeer het programma.
+3. Maak een `main.c`-programma dat de LED's laat knipperen zolang een of meer willekeurige schakelaars zijn ingedrukt. Als geen schakelaar is ingedrukt, zijn de LED's uit.
+4. Pas het programma daarna zo aan dat alleen schakelaar 0 deze functie heeft. Het indrukken van een andere schakelaar mag geen effect hebben.
 
 :::{tip}
-- Maak gebruik van een variabele met de naam leds van het type uint8_t
-- Maak gebruik van herhalingen (naar keuze while/do, do/while of for)
-- Maak gebruik van een bit set operatie om LED’s aan te zetten
-- Maak gebruik van een bit clear operatie om LED’s uit te zetten
-- Maak gebruik van een shift operatie
+- Laat je voor het knipperen van de LED's inspireren door het programma `FlashLeds` uit opdracht 2.
+- Maak gebruik van een `if`-statement.
+- Gebruik een bitwise AND-operatie om te controleren of schakelaar 0 is ingedrukt.
 :::
+
+## Opdracht 3.2: LED's knipperen met behoud van laatste stand
+
+1. Open in Visual Studio Code het project `Framework_3_2` door de map `opdracht3/Framework_3_2` te openen.
+2. Open het bestand `main.c` in Visual Studio Code en bestudeer het programma.
+3. Maak een `main.c`-programma dat de LED's laat knipperen zolang een of meer willekeurige schakelaars zijn ingedrukt. Als geen schakelaar is ingedrukt, blijven de LED's in hun laatste stand.
+4. Pas het programma daarna zo aan dat alleen schakelaar 1 deze functie heeft. Het indrukken van een andere schakelaar mag geen invloed hebben.
+
+:::{tip}
+Je kunt ook `main.c` uit opdracht 3.1 als startpunt gebruiken. Kopieer dit programma dan eerst naar `opdracht3/Framework_3_2/src` voordat je met de uitwerking begint.
+:::
+
+## Opdracht 3.3: LED's 1 seconde aan bij schakelaar-indruk
+
+1. Open in Visual Studio Code het project `Framework_3_3` door de map `opdracht3/Framework_3_3` te openen.
+2. Open het bestand `main.c` in Visual Studio Code en bestudeer het programma.
+3. Maak een programma waarbij de LED's bij het indrukken van een willekeurige schakelaar 1 seconde branden. Het mag daarbij niet uitmaken hoe lang de schakelaar wordt ingedrukt.
+4. Pas het programma daarna zo aan dat alleen schakelaar 2 deze functie heeft. Het indrukken van een andere schakelaar mag geen invloed hebben.
+
+## Opdracht 3.4: LED's aan tijdens indrukken met 1 seconde nabranden
+
+1. Open in Visual Studio Code het project `Framework_3_4` door de map `opdracht3/Framework_3_4` te openen.
+2. Open het bestand `main.c` in Visual Studio Code en bestudeer het programma.
+3. Maak een programma dat de LED's laat branden zolang een willekeurige schakelaar is ingedrukt. Na het loslaten van de schakelaar blijven de LED's nog 1 seconde branden.
+4. Pas het programma daarna zo aan dat alleen schakelaar 3 deze functie heeft. Het indrukken van een andere schakelaar mag geen invloed hebben.
+
+## Opdracht 3.5: LED's één voor één op- en afbouwen met bitwise operaties
+
+1. Open in Visual Studio Code het project `Framework_3_5` door de map `opdracht3/Framework_3_5` te openen.
+2. Open het bestand `main.c` in Visual Studio Code en bestudeer het programma.
+3. Maak een programma met een oneindige herhaling waarin alle LED's één voor één worden aangezet, beginnend bij LED 0. Laat elke tussenstand 1 seconde zien. LED's die al aan zijn, blijven aan.
+4. Zodra alle LED's aan zijn, zet je ze weer één voor één uit, beginnend bij LED 0. LED's die al uit zijn, blijven uit.
+
+:::{tip}
+- Gebruik een variabele met de naam `leds` van het type `uint8_t`.
+- Gebruik herhalingen (`while`, `do/while` of `for`).
+- Gebruik een bit set-operatie om LED's aan te zetten.
+- Gebruik een bit clear-operatie om LED's uit te zetten.
+- Gebruik een shift-operatie.
+:::
+
+## Opdracht 3.6: Inleveren van de opdrachten
+
+Lever je rapportage in op Brightspace. Gebruik hiervoor het document `Rapportage_Opdracht_3.docx` in de map `opdracht3` van de microcontrollers workshop. In dit document vul je de antwoorden op de vragen en de conclusies van de verschillende opdrachten in.
