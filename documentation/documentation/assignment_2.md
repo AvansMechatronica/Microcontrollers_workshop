@@ -69,7 +69,7 @@ int main(void)
 
 *C-programma 1. Het programma FlashLeds*
 
-Open `main.c` in `opdracht2/FlashLeds/src`.
+Open `main.c` in `opdracht2/FlashLeds/src` map.
 
 Pas C-programma 1 zo aan dat de LED's twee keer zo traag knipperen. Voeg hiervoor de regels toe zoals in C-programma 2. Sla het programma op, compileer het en flash het naar de Arduino.
 

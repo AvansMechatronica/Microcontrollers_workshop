@@ -20,7 +20,6 @@ Deze functies komen overeen met de functies in het PSD van het volledige program
 - Het is niet verplicht om PSD's te maken, maar dit mag wel als verduidelijking.
 - Open in Visual Studio Code het project `Framework_5` door de map `opdracht5/Framework_5` te openen.
 - Voeg op de aangegeven plekken de uitwerkingen van onderstaande opdrachten toe.
-- Demonstreer de uitwerking van de opdrachten aan de docent.
 :::
 
 
