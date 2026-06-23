@@ -2,7 +2,7 @@
 
 ## Doel van deze handleiding
 
-Deze pagina is bedoeld als korte leidraad voor docenten bij het begeleiden van de microcontroller-workshop.
+Deze pagina is bedoeld als korte leidraad voor practicumbegeleiders bij het begeleiden van de microcontroller-workshop.
 
 ## Voorbereiding
 

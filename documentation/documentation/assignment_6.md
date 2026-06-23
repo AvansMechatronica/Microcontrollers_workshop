@@ -1,6 +1,5 @@
 # Opdracht 6: Testen en simuleren van de signaallamp-besturing
 
-
 In dit practicum test je het programma voor de signaallamp-besturing. Het PSD van het volledige programma staat in figuur 1.
 
 ![image](../images/psd_volledige_besturing.png)
@@ -8,13 +7,8 @@ In dit practicum test je het programma voor de signaallamp-besturing. Het PSD va
 *Figuur 1. PSD van het volledige besturingsprogramma*
 
 :::{tip}
-- Gebruik de uitwerkingen van de practica van week 8. Deze bevatten al alle benodigde functionele code.
+- Voor deze opdracht hoef je geen code te schrijven, maar alleen de code van de voorgaande opdrachten te testen en te simuleren. Voor de zekerheid bieden we je de uitweringen daarvan aan, zodat je deze kunt gebruiken als referentie. Open daartoe in Visual Studio Code het project `Framework_6` door de map `opdracht6/Framework_6` te openen.
 - Het is niet verplicht om PSD's te maken, maar dit mag wel ter verduidelijking.
-- Gebruik `FrameworkWeek8.zip` van Brightspace.
-- Pak het bestand uit in een geschikte map (bij voorkeur op je homedrive op het Avans-netwerk).
-- Open `FrameworkWeek8.atsln` in Microchip Studio.
-- Voeg op de aangegeven plekken de uitwerkingen van onderstaande opdrachten in.
-- Demonstreer de uitwerking van de opdrachten aan de docent.
 :::
 
 ## Integratie- en simulatietesten van de geimplementeerde functies

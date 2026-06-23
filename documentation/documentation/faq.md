@@ -21,7 +21,7 @@ Controleer eerst:
 3. Of je alleen geldige poorten/bits gebruikt.
 4. Of PlatformIO of Microchip Studio zonder fouten is geinstalleerd.
 
-Lukt het daarna nog niet, vraag hulp aan de docent en neem de foutmelding mee.
+Lukt het daarna nog niet, vraag hulp aan de practicumbegeleider en neem de foutmelding mee.
 
 ## Mijn upload naar de Arduino lukt niet
 

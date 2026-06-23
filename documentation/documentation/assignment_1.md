@@ -20,7 +20,7 @@ Installeer de volgende software:
   - Installeer de JDK (niet alleen de JRE), omdat de JDK nodig is voor het ontwikkelen van Java-toepassingen.
 
 :::{warning}
-Downloadlinks kunnen wijzigen. Probeer eerst zelf een oplossing te vinden als een link niet werkt. Neem contact op met de docent als je daarna nog steeds problemen hebt met downloaden of installeren.
+Downloadlinks kunnen wijzigen. Probeer eerst zelf een oplossing te vinden als een link niet werkt. Neem contact op met de practicumbegeleider als je daarna nog steeds problemen hebt met downloaden of installeren.
 :::
 
 Test of de software correct is geinstalleerd:
