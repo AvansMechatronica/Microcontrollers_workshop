@@ -63,6 +63,6 @@ if (IsKnopIngedrukt(knopNummer) == true)
 }
 ```
 
-## Opdracht 4.4: Inleveren
+## Opdracht 4.4: Inleveren van de opdrachten
 
-Lever je rapportage in op Brightspace. Gebruik hiervoor het document `Rapportage_Opdracht_4.docx` in de map `opdracht4` van de microcontrollers workshop. In dit document vul je de antwoorden op de vragen en je conclusies per opdracht in.
+Lever je rapportage in op Brightspace. Gebruik hiervoor het document `Rapportage_Opdracht_4.docx` in de map `opdracht4` van de microcontrollers workshop. In dit document vul je de antwoorden op de vragen en de conclusies van de verschillende opdrachten in.

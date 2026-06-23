@@ -1,6 +1,5 @@
 # Opdracht 6: Testen en simuleren van de signaallamp-besturing
 
-## 6.1 Inleiding
 
 In dit practicum test je het programma voor de signaallamp-besturing. Het PSD van het volledige programma staat in figuur 1.
 
@@ -18,7 +17,7 @@ In dit practicum test je het programma voor de signaallamp-besturing. Het PSD va
 - Demonstreer de uitwerking van de opdrachten aan de docent.
 :::
 
-## 6.2 Integratie- en simulatietesten van de geimplementeerde functies
+## Integratie- en simulatietesten van de geimplementeerde functies
 
 Alle code moet eerst worden getest voordat de Arduino met shield wordt aangesloten op de level shifter en de PLC van de transportband. Het testen is gefaseerd:
 
@@ -28,7 +27,7 @@ Alle code moet eerst worden getest voordat de Arduino met shield wordt aangeslot
 
 In dit practicum voer je simulatie 1 uit: testen met de knoppen op het shield.
 
-## 6.3 Test 1: Arduino + shield
+## Opdracht 6.1 Test 1: Arduino + shield
 
 In deze test simuleer je het SYNC-signaal en de functiecode met de drukknoppen, en controleer je het gedrag via de LED's op het shield.
 
@@ -48,7 +47,7 @@ De simulatie verloopt als volgt:
 6. Laat knop D3 los (simulatie van inactief worden van SYNC).
 7. Bij correcte simulatie gaan zowel de SYNC-LED (B6) als de ACK-LED (B7) uit.
 
-## 6.4 Test 2: Arduino + shield + signaalzuil-simulator
+## Opdracht 6.2 Test 2: Arduino + shield + signaalzuil-simulator
 
 Wanneer test 1 succesvol is uitgevoerd, sluit je de LED-bar met kleuren-LED's aan als simulatie van de signaalzuil. Controleer op dezelfde manier als in test 1 of de juiste kleuren worden aangestuurd.
 
@@ -68,7 +67,7 @@ Sluit Arduino-shield en LED-bar aan volgens tabel 1 en figuur 2.
 
 *Figuur 2. Aansluitingen Arduino-shield en LED-bar*
 
-## 6.5 Test 3: Arduino + shield + level shifter + PLC-simulator
+## Opdracht 6.3 Test 3: Arduino + shield + level shifter + PLC-simulator
 
 Wanneer test 2 succesvol is afgerond, vervang je de knopbesturing van de handshakesignalen door besturing via PLC-inputs. Daarvoor gebruik je een PLC-simulator via de level shifter.
 
@@ -134,13 +133,16 @@ Controleer of alle simulatieprogramma's uit tabel 4 correct werken. Zo niet:
 1. Controleer eerst bedrading en aansluitingen.
 2. Zoek daarna de fout in de Arduino-code en pas de code aan.
 
-## 6.6 Test 4: Arduino + shield + LED-bar + level shifter + besturings-PLC
+## Opdracht 6.3 Test 4: Arduino + shield + LED-bar + level shifter + besturings-PLC
 
 Wanneer test 3 succesvol is afgerond, voer je de integratietest uit met de PLC van de transportband, de level shifter en de Arduino.
 
 Sluit hiervoor de level shifter aan op de PLC in plaats van op de PLC-simulator. Voer daarna het aangeleverde PLC-testprogramma uit zodat de juiste signalen worden gegenereerd.
 
-## 6.7 Test 5: Arduino + shield + signaalzuil + level shifter + besturings-PLC
+## Opdracht 6.4 Test 5: Arduino + shield + signaalzuil + level shifter + besturings-PLC
 
 Wanneer test 4 succesvol is afgerond, vervang je de LED-bar door de signaalzuil. Controleer of de juiste kleuren op de lampen worden weergegeven.
 
+## Opdracht 6.5: Inleveren van de opdrachten
+
+Lever je rapportage in op Brightspace. Gebruik hiervoor het document `Rapportage_Opdracht_6.docx` in de map `opdracht6` van de microcontrollers workshop. In dit document vul je de antwoorden op de vragen en de conclusies van de verschillende opdrachten in.
