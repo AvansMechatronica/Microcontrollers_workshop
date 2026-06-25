@@ -12,12 +12,7 @@ Tijdens de uitvoering van deze opdracht houd je een rapportage bij. Gebruik hier
 Deze opdracht voer je in je eigen tijd uit, voordat je met het practicum begint. Als je de software nog niet hebt geinstalleerd, heb je geen toegang tot het practicum.
 :::
 
-Voor het programmeren van de Arduino Uno gebruik je Visual Studio Code met de PlatformIO-extensie. Volg deze stappen:
-
-1. Download en installeer Visual Studio Code via <https://code.visualstudio.com/>.
-2. Open Visual Studio Code en ga naar Extensions (`Ctrl+Shift+X`).
-3. Zoek op `PlatformIO` en installeer de extensie.
-4. Herstart Visual Studio Code na installatie.
+Voor het programmeren van de Arduino Uno gebruik je Visual Studio Code met de PlatformIO-extensie. Volg de stapppen beschreven in [Installatie van Visual Studio Code en PlatformIO](install.md) om Visual Studio Code en PlatformIO te installeren. Tevens download je de workshopbestanden met code, schema's en opdrachtinstructies. Pak het ZIP-bestand uit in een map die je makkelijk terugvindt.
 
 ## Opdracht 2.2: Een programma uitvoeren op de Arduino Uno
 
