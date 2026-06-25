@@ -36,11 +36,25 @@ Pak het ZIP-bestand uit in een map die je makkelijk terugvindt.
 :::
 
 :::{tab-item} Git Clone
-Je kunt de repository ook clonen:
 
-```cmd
-git clone https://github.com/AvansMechatronica/Microcontrollers_workshop.git
+Als je al bekend bent met Git en github, kun je de bestanden ook via Github verkrijgen. Volg de onderstaande stappen:
+
+* Maak een account aan bij [Github](https://github.com/) en login op dit account
+
+* Open de [Microcontrollers_workshop](https://github.com/AvansMechatronica/Microcontrollers_workshop) repository
+
+* Maak een Fork van de repository naar je eigen Github account door op het **Fork icoon**  te klikken:
+
+![image](../images/fork.jpg)
+
+* Volg de instructies, maar wijzig de naam van de nieuwe repository niet. Bevestig met **Create Fork**  
+
+* Nu kun je de workshop clonen naar je lokale machine:
+
+```bash
+git clone https://github.com/<jouw_account_naam>/Microcontrollers_workshop.git
 ```
+
 :::
 
 ::::
