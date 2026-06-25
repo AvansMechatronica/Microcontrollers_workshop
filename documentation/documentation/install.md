@@ -33,6 +33,7 @@ Download de bestanden als ZIP via:
 [Download Workshop Bestanden](https://github.com/AvansMechatronica/Microcontrollers_workshop/archive/refs/heads/main.zip)
 
 Pak het ZIP-bestand uit in een map die je makkelijk terugvindt.
+
 :::
 
 :::{tab-item} Git Clone
@@ -58,6 +59,7 @@ git clone https://github.com/<jouw_account_naam>/Microcontrollers_workshop.git
 :::
 
 ::::
+
 :::::
 
 :::{warning}
