@@ -1,3 +1,12 @@
-# Voorbeeld programma's
+# Voorbeeldprogramma's
 
-Er zijn in de folder `examples` verschillende voorbeeldprogramma's te vinden die je kunt gebruiken als basis voor je eigen projecten. Deze programma's zijn geschreven in C++ en zijn bedoeld om je te helpen begrijpen hoe je verschillende functies van de microcontroller kunt gebruiken.
+In de map `examples` staan verschillende voorbeeldprogramma's die je kunt gebruiken als startpunt voor je eigen projecten.
+
+Deze programma's laten zien hoe je typische functies van de microcontroller toepast, zoals:
+
+- het initialiseren van poorten;
+- het uitlezen van inputs;
+- het aansturen van outputs;
+- het werken met eenvoudige programmastructuren.
+
+Gebruik de voorbeelden als referentie tijdens de opdrachten, maar zorg dat je altijd begrijpt wat de code doet voordat je onderdelen overneemt.
