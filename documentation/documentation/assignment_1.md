@@ -35,6 +35,10 @@ Test of de software correct is geinstalleerd:
 
 ## Opdracht 1.2: Basisconstructies in PSD's
 
+:::{note}
+Alvorens je aan de opdrachten begint, is het belangrijk dat je de workshopbestanden hebt gedownload. Deze bestanden bevatten de benodigde code, schema's en instructies voor de opdrachten die je zult uitvoeren tijdens de workshop. Zie [Installatie-instructies](install.md#verkrijgen-van-de-workshopbestanden) voor informatie over het verkrijgen van de workshopbestanden.
+:::
+
 Gebruik voor deze opdracht het project `Framework_1.nsd`.
 
 - Dit bestand staat in `opdracht1/structorizer` van de microcontrollers workshop.
