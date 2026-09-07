@@ -23,3 +23,6 @@ Controleer vooraf:
 - Laat studenten het juiste rapportagedocument gebruiken per opdracht.
 - Controleer of conclusies aansluiten op uitgevoerde testen.
 - Vraag bij twijfel om een korte demonstratie van werking op de hardware.
+
+## Uitwerkingen
+Uitwerkingen kunnen in de [Microcontrollers_workshop_uitwerkingen](https://github.com/AvansMechatronica/Microcontrollers_workshop_uitwerkingen.git) repository worden gevonden. Deze is alleen beschikbaar voor geregisteerde gebruikers.
