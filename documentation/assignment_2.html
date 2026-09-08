@@ -1,0 +1,373 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opdracht 2: Kennismaken met de Arduino Uno en PlatformIO &mdash; Microcontrllers Workshop 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Opdracht 3: Programmeren in C op de Arduino Uno" href="assignment_3.html" />
+    <link rel="prev" title="Opdracht 1: Oefenen met PSD’s" href="assignment_1.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Microcontrllers Workshop
+              <img src="../_static/avans-hogeschool-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arduino.html">Arduino Uno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Visual Studio Code en PlatformIO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_1.html">Opdracht 1: Oefenen met PSD’s</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Opdracht 2: Kennismaken met de Arduino Uno en PlatformIO</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-2-1-installatie-van-visual-studio-code-en-platformio">Opdracht 2.1: Installatie van Visual Studio Code en PlatformIO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-2-2-een-programma-uitvoeren-op-de-arduino-uno">Opdracht 2.2: Een programma uitvoeren op de Arduino Uno</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-2-3-een-eenvoudig-programma-in-c">Opdracht 2.3: Een eenvoudig programma in C</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-2-4-onderzoek-aansturen-led-s">Opdracht 2.4: Onderzoek aansturen LED’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-2-5-onderzoek-inlezen-schakelaars">Opdracht 2.5: Onderzoek inlezen schakelaars</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-2-6-teller">Opdracht 2.6: Teller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-2-7-inleveren-van-de-opdrachten">Opdracht 2.7: Inleveren van de opdrachten</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_3.html">Opdracht 3: Programmeren in C op de Arduino Uno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_4.html">Opdracht 4: Oefenen met functies in C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_5.html">Opdracht 5: Simulatie van signaallamp-besturing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_6.html">Opdracht 6: Testen en simuleren van de signaallamp-besturing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Voorbeeldprogramma’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Veelgestelde vragen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teacher_manual.html">Docentenhandleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Microcontrllers Workshop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Opdracht 2: Kennismaken met de Arduino Uno en PlatformIO</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/assignment_2.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="opdracht-2-kennismaken-met-de-arduino-uno-en-platformio">
+<h1>Opdracht 2: Kennismaken met de Arduino Uno en PlatformIO<a class="headerlink" href="#opdracht-2-kennismaken-met-de-arduino-uno-en-platformio" title="Link to this heading"></a></h1>
+<p>In deze opdracht maak je kennis met de Arduino Uno en de bijbehorende programmeeromgeving PlatformIO. Je leert hoe je een programma schrijft in C, hoe je dit programma compileert en flasht naar de Arduino Uno, en hoe je de LED’s en schakelaars op het LED/switch-shield aanstuurt en uitleest.</p>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>Tijdens de uitvoering van deze opdracht houd je een rapportage bij. Gebruik hiervoor het document <code class="docutils literal notranslate"><span class="pre">Rapportage_Opdracht_2.docx</span></code> in de map <code class="docutils literal notranslate"><span class="pre">opdracht2</span></code> van de microcontrollers workshop. Dit bestand lever je in op Brightspace.</p>
+</div>
+<section id="opdracht-2-1-installatie-van-visual-studio-code-en-platformio">
+<h2>Opdracht 2.1: Installatie van Visual Studio Code en PlatformIO<a class="headerlink" href="#opdracht-2-1-installatie-van-visual-studio-code-en-platformio" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>Deze opdracht voer je in je eigen tijd uit, voordat je met het practicum begint. Als je de software nog niet hebt geinstalleerd, heb je geen toegang tot het practicum.</p>
+</div>
+<p>Voor het programmeren van de Arduino Uno gebruik je Visual Studio Code met de PlatformIO-extensie. Volg de stapppen beschreven in <a class="reference internal" href="install.html"><span class="std std-doc">Installatie van Visual Studio Code en PlatformIO</span></a> om Visual Studio Code en PlatformIO te installeren. Tevens download je de workshopbestanden met code, schema’s en opdrachtinstructies. Pak het ZIP-bestand uit in een map die je makkelijk terugvindt.</p>
+</section>
+<section id="opdracht-2-2-een-programma-uitvoeren-op-de-arduino-uno">
+<h2>Opdracht 2.2: Een programma uitvoeren op de Arduino Uno<a class="headerlink" href="#opdracht-2-2-een-programma-uitvoeren-op-de-arduino-uno" title="Link to this heading"></a></h2>
+<p>De Arduino Uno wordt gebruikt in combinatie met een shield dat nodig is voor communicatie met de PLC en het aansturen van de signaalzuil. In het practicum gebruik je de schakelaars en LED’s op dit shield (zie figuur 1).</p>
+<p><img alt="Image" src="../_images/arduino_shield.png" /></p>
+<p><em>Figuur 1. Positie van schakelaars en LED’s</em></p>
+<p>Om een programma op de Arduino Uno uit te voeren, moet het programma vanaf de pc naar de Arduino worden geflasht. Dit doe je met PlatformIO.</p>
+<ol class="arabic simple">
+<li><p>Open in Visual Studio Code het project <code class="docutils literal notranslate"><span class="pre">FlashLeds</span></code> door de map <code class="docutils literal notranslate"><span class="pre">opdracht2/FlashLeds</span></code> te openen (<code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">Folder</span></code>).</p></li>
+</ol>
+<p><img alt="image" src="../_images/vsc_platformio.jpg" /></p>
+<p><em>Figuur 2. Visual Studio Code met PlatformIO-extensie</em></p>
+<ol class="arabic simple" start="2">
+<li><p>Compileer het programma met het vinkje (check-icoon) in de onderste balk of met <code class="docutils literal notranslate"><span class="pre">Ctrl+Alt+B</span></code>. Controleer of er geen compileerfouten zijn.</p></li>
+</ol>
+<p><img alt="image" src="../_images/Compile.JPG" /></p>
+<ol class="arabic simple" start="3">
+<li><p>Plaats het shield op de Arduino Uno en sluit de Arduino Uno met een USB-kabel aan op de pc.</p></li>
+<li><p>Flash het programma met het upload-icoon in de onderste balk of met <code class="docutils literal notranslate"><span class="pre">Ctrl+Alt+U</span></code>. Controleer of de LED’s op het shield knipperen zoals verwacht.</p></li>
+</ol>
+<p><img alt="image" src="../_images/Upload.JPG" /></p>
+</section>
+<section id="opdracht-2-3-een-eenvoudig-programma-in-c">
+<h2>Opdracht 2.3: Een eenvoudig programma in C<a class="headerlink" href="#opdracht-2-3-een-eenvoudig-programma-in-c" title="Link to this heading"></a></h2>
+<p>C-programma 1 laat zien hoe de LED’s op het shield kunnen worden aangestuurd. In dit programma worden de LED’s steeds 500 ms aan en 500 ms uit gezet.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">	</span><span class="n">initPorts</span><span class="p">();</span>
+<span class="w">	</span><span class="n">initTimer</span><span class="p">();</span>
+
+<span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="c1">// endless loop, flash the LED&#39;s on PORTD</span>
+<span class="w">	</span><span class="p">{</span>
+<span class="w">		</span><span class="n">PORTD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="p">;</span>
+<span class="w">		</span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+
+<span class="w">		</span><span class="n">PORTD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">		</span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>C-programma 1. Het programma FlashLeds</em></p>
+<p>Open <code class="docutils literal notranslate"><span class="pre">main.c</span></code> in <code class="docutils literal notranslate"><span class="pre">opdracht2/FlashLeds/src</span></code> map.</p>
+<p>Pas C-programma 1 zo aan dat de LED’s twee keer zo traag knipperen. Voeg hiervoor de regels toe zoals in C-programma 2. Sla het programma op, compileer het en flash het naar de Arduino.</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(</span><span class="kt">void</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">	</span><span class="n">initPorts</span><span class="p">();</span>
+<span class="w">	</span><span class="n">initTimer</span><span class="p">();</span>
+
+<span class="w">	</span><span class="k">while</span><span class="w"> </span><span class="p">(</span><span class="nb">true</span><span class="p">)</span><span class="w"> </span><span class="c1">// endless loop, flash the LED&#39;s on PORTD</span>
+<span class="w">	</span><span class="p">{</span>
+<span class="w">		</span><span class="n">PORTD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">255</span><span class="p">;</span>
+<span class="w">		</span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">		</span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w"> </span><span class="c1">// voeg deze regel toe</span>
+
+<span class="w">		</span><span class="n">PORTD</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="w">		</span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span>
+<span class="w">		</span><span class="n">delay</span><span class="p">(</span><span class="mi">500</span><span class="p">);</span><span class="w"> </span><span class="c1">// voeg deze regel toe</span>
+<span class="w">	</span><span class="p">}</span>
+
+<span class="w">	</span><span class="k">return</span><span class="w"> </span><span class="mi">0</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><em>C-programma 2. Het aangepaste programma FlashLeds</em></p>
+</section>
+<section id="opdracht-2-4-onderzoek-aansturen-led-s">
+<h2>Opdracht 2.4: Onderzoek aansturen LED’s<a class="headerlink" href="#opdracht-2-4-onderzoek-aansturen-led-s" title="Link to this heading"></a></h2>
+<p>Een LED kan op twee manieren op een microcontroller worden aangesloten (figuur 3 en figuur 4). Onderzoek op welke manier de LED’s op het Arduino LED/switch-shield zijn aangesloten:</p>
+<ol class="arabic simple">
+<li><p>Maak eerst een aanname over het gedrag van de LED’s.</p></li>
+<li><p>Controleer deze aanname met een programma. Gebruik <code class="docutils literal notranslate"><span class="pre">PORTD</span></code> om de LED’s aan te sturen.</p></li>
+</ol>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="Image" src="../_images/led_active_low.png" /></p>
+<p class="sd-card-text"><strong>Figuur 3. Output/LED aangesloten op voedingsspanning</strong></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="Image" src="../_images/led_active_high.png" /></p>
+<p class="sd-card-text"><strong>Figuur 4. Output/LED aangesloten op ground</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<p>Werk daarna uit:</p>
+<ol class="arabic simple">
+<li><p>Open in Visual Studio Code het project <code class="docutils literal notranslate"><span class="pre">LedTest</span></code> door de map <code class="docutils literal notranslate"><span class="pre">opdracht2/LedTest</span></code> te openen (<code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">Folder</span></code>).</p></li>
+<li><p>Flash het programma naar de Arduino Uno.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">main.c</span></code> en bestudeer dit programma. Controleer of dit programma de LED’s aanstuurt zoals verwacht.</p></li>
+<li><p>Vul tabel 1 in. Neem aan: logische <code class="docutils literal notranslate"><span class="pre">1</span></code> is +5 Volt en logische <code class="docutils literal notranslate"><span class="pre">0</span></code> is 0 Volt. Vul per figuur in of de LED <code class="docutils literal notranslate"><span class="pre">AAN</span></code> of <code class="docutils literal notranslate"><span class="pre">UIT</span></code> is.</p></li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Output = 0</p></th>
+<th class="head"><p>Output = 1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Figuur 3</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Figuur 4</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Tabel 1. Gedrag van LED’s op de uitgang van een microcontroller</em></p>
+<ol class="arabic simple" start="5">
+<li><p>Trek een conclusie:</p></li>
+</ol>
+<ul class="simple">
+<li><p>Een LED is <code class="docutils literal notranslate"><span class="pre">AAN</span></code> als de output een logische … is.</p></li>
+<li><p>Een LED is <code class="docutils literal notranslate"><span class="pre">UIT</span></code> als de output een logische … is.</p></li>
+</ul>
+</section>
+<section id="opdracht-2-5-onderzoek-inlezen-schakelaars">
+<h2>Opdracht 2.5: Onderzoek inlezen schakelaars<a class="headerlink" href="#opdracht-2-5-onderzoek-inlezen-schakelaars" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Open in Visual Studio Code het project <code class="docutils literal notranslate"><span class="pre">SwitchTest</span></code> door de map <code class="docutils literal notranslate"><span class="pre">opdracht2/SwitchTest</span></code> te openen (<code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">Folder</span></code>).</p></li>
+<li><p>Flash het programma naar de Arduino Uno.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">main.c</span></code>, bestudeer het programma en probeer te begrijpen wat het doet.</p></li>
+</ol>
+<p>Gebruik voor deze opdracht de kennis uit <code class="docutils literal notranslate"><span class="pre">LedTest</span></code> (opdracht 2.4).</p>
+<div class="admonition warning">
+<p class="admonition-title">Waarschuwing</p>
+<p>We hebben 4 schakelaars en 8 LED’s. Kijk in deze opdracht alleen naar LED’s B3..B0 (de 4 meest rechtse LED’s). LED’s 7..4 hebben een andere functie.</p>
+</div>
+<p>Een schakelaar kan op twee manieren op een microcontroller worden aangesloten (figuur 5 en figuur 6). Onderzoek hoe de schakelaars op het Arduino LED/switch-shield zijn geconfigureerd.</p>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 docutils">
+<div class="sd-row sd-row-cols-2 sd-row-cols-xs-2 sd-row-cols-sm-2 sd-row-cols-md-2 sd-row-cols-lg-2 docutils">
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="Image" src="../_images/switch_active_low.png" /></p>
+<p class="sd-card-text"><strong>Figuur 5. Input/schakelaar aangesloten op ground</strong></p>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<p class="sd-card-text"><img alt="Image" src="../_images/switch_active_high.png" /></p>
+<p class="sd-card-text"><strong>Figuur 6. Input/schakelaar aangesloten op voedingsspanning</strong></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Vul tabel 2 in. Neem aan: logische <code class="docutils literal notranslate"><span class="pre">1</span></code> is +5 Volt en logische <code class="docutils literal notranslate"><span class="pre">0</span></code> is 0 Volt. Vul per figuur in of de schakelaar <code class="docutils literal notranslate"><span class="pre">IN</span></code> of <code class="docutils literal notranslate"><span class="pre">LOS</span></code> is.</p></li>
+</ol>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p></p></th>
+<th class="head"><p>Input = 0</p></th>
+<th class="head"><p>Input = 1</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Figuur 5</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p>Figuur 6</p></td>
+<td><p></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Tabel 2. Gedrag van schakelaars op de ingang van een microcontroller</em></p>
+<ol class="arabic simple" start="5">
+<li><p>Onderzoek daarna of een ingedrukte schakelaar een <code class="docutils literal notranslate"><span class="pre">0</span></code> of juist een <code class="docutils literal notranslate"><span class="pre">1</span></code> oplevert op de ingang van de microcontroller.</p></li>
+<li><p>Maak een aanname.</p></li>
+<li><p>Controleer de aanname met een programma.</p></li>
+</ol>
+<p>Gebruik <code class="docutils literal notranslate"><span class="pre">PINB</span></code> om vier schakelaars tegelijk in te lezen. Gebruik ook de conclusies uit de vorige opdracht over het LED-gedrag.</p>
+<p><em>Aanwijzingen:</em></p>
+<ul class="simple">
+<li><p>Maak een programma dat continu de status van de schakelaars weergeeft op de LED’s (alleen de 4 rechtse LED’s).</p></li>
+<li><p>Bepaal of een ingedrukte schakelaar een <code class="docutils literal notranslate"><span class="pre">0</span></code> of een <code class="docutils literal notranslate"><span class="pre">1</span></code> geeft op de ingang.</p></li>
+</ul>
+<p><em>Conclusie:</em></p>
+<ul class="simple">
+<li><p>Een ingedrukte schakelaar genereert een logische … op de ingang van de microcontroller.</p></li>
+<li><p>Een losgelaten schakelaar genereert een logische … op de ingang van de microcontroller.</p></li>
+</ul>
+</section>
+<section id="opdracht-2-6-teller">
+<h2>Opdracht 2.6: Teller<a class="headerlink" href="#opdracht-2-6-teller" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Open in Visual Studio Code het project <code class="docutils literal notranslate"><span class="pre">Teller</span></code> door de map <code class="docutils literal notranslate"><span class="pre">opdracht2/Teller</span></code> te openen (<code class="docutils literal notranslate"><span class="pre">File</span> <span class="pre">&gt;</span> <span class="pre">Open</span> <span class="pre">Folder</span></code>).</p></li>
+<li><p>Flash het programma naar de Arduino Uno.</p></li>
+<li><p>Open <code class="docutils literal notranslate"><span class="pre">main.c</span></code>, bestudeer het programma en probeer te begrijpen wat het doet.</p></li>
+</ol>
+<p>Pas het programma zo aan dat op de LED’s van het LED/switch-shield een binaire teller zichtbaar is die elke halve seconde omhoog telt. De beginwaarde van de teller is <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>Het programma moet niet alleen correct tellen, maar ook logisch en leesbaar opgebouwd zijn. Er moet dus ergens een opdracht staan met een plus-operator, bijvoorbeeld:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">teller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">teller</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>Het programma is fout als het ergens een opdracht bevat in de vorm:</p>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="n">teller</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">teller</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</pre></div>
+</div>
+</div>
+</section>
+<section id="opdracht-2-7-inleveren-van-de-opdrachten">
+<h2>Opdracht 2.7: Inleveren van de opdrachten<a class="headerlink" href="#opdracht-2-7-inleveren-van-de-opdrachten" title="Link to this heading"></a></h2>
+<p>Lever je rapportage in op Brightspace. Gebruik hiervoor het document <code class="docutils literal notranslate"><span class="pre">Rapportage_Opdracht_2.docx</span></code> in de map <code class="docutils literal notranslate"><span class="pre">opdracht2</span></code> van de microcontrollers workshop. In dit document vul je de antwoorden op de vragen en je conclusies per opdracht in.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="assignment_1.html" class="btn btn-neutral float-left" title="Opdracht 1: Oefenen met PSD’s" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="assignment_3.html" class="btn btn-neutral float-right" title="Opdracht 3: Programmeren in C op de Arduino Uno" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Gerard Harkema &amp; Vincent Teuben.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

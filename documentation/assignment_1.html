@@ -1,0 +1,223 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opdracht 1: Oefenen met PSD’s &mdash; Microcontrllers Workshop 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Opdracht 2: Kennismaken met de Arduino Uno en PlatformIO" href="assignment_2.html" />
+    <link rel="prev" title="Visual Studio Code en PlatformIO" href="install.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Microcontrllers Workshop
+              <img src="../_static/avans-hogeschool-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arduino.html">Arduino Uno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Visual Studio Code en PlatformIO</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Opdracht 1: Oefenen met PSD’s</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-1-1-structorizer-en-java-installeren">Opdracht 1.1: Structorizer en Java installeren</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-1-2-basisconstructies-in-psd-s">Opdracht 1.2: Basisconstructies in PSD’s</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-1-3-berekenen-van-het-gemiddelde-van-een-lijst-getallen">Opdracht 1.3: Berekenen van het gemiddelde van een lijst getallen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-1-4-uitbreiding-van-opdracht-1-3">Opdracht 1.4: Uitbreiding van opdracht 1.3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-1-5-inleveren-van-de-opdracht">Opdracht 1.5: Inleveren van de opdracht</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_2.html">Opdracht 2: Kennismaken met de Arduino Uno en PlatformIO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_3.html">Opdracht 3: Programmeren in C op de Arduino Uno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_4.html">Opdracht 4: Oefenen met functies in C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_5.html">Opdracht 5: Simulatie van signaallamp-besturing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_6.html">Opdracht 6: Testen en simuleren van de signaallamp-besturing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Voorbeeldprogramma’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Veelgestelde vragen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teacher_manual.html">Docentenhandleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Microcontrllers Workshop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Opdracht 1: Oefenen met PSD’s</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/assignment_1.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="opdracht-1-oefenen-met-psd-s">
+<h1>Opdracht 1: Oefenen met PSD’s<a class="headerlink" href="#opdracht-1-oefenen-met-psd-s" title="Link to this heading"></a></h1>
+<p>In deze opdracht ga je aan de slag met het maken van programma’s in Structorizer. Structorizer is een tool waarmee je programma’s kunt ontwerpen en simuleren met behulp van Programma Stroom Diagrammen (PSD’s). Je leert hoe je de basisconstructies van programmeren toepast in PSD’s en hoe je deze uitvoert en debugt met de Executor-functie van Structorizer.</p>
+<section id="opdracht-1-1-structorizer-en-java-installeren">
+<h2>Opdracht 1.1: Structorizer en Java installeren<a class="headerlink" href="#opdracht-1-1-structorizer-en-java-installeren" title="Link to this heading"></a></h2>
+<p>Installeer de volgende software:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Structorizer</span></code>: simulatiepakket voor PSD’s. Dit gebruik je in dit practicum om te oefenen met de drie basisstructuren van programmeren. De laatste versie is te downloaden via <a class="reference external" href="https://structorizer.fisch.lu/">Structorizer</a>.</p>
+<ul>
+<li><p>Kies op de website onder <code class="docutils literal notranslate"><span class="pre">Downloads</span></code> de <code class="docutils literal notranslate"><span class="pre">windows</span> <span class="pre">installer</span></code>.</p></li>
+<li><p>Het bestand wordt gedownload naar je map <code class="docutils literal notranslate"><span class="pre">Downloads</span></code>.</p></li>
+<li><p>Dubbelklik op <code class="docutils literal notranslate"><span class="pre">structorizer.exe</span></code> om de installatie te starten en volg de instructies op het scherm.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Java</span></code>: te downloaden via <a class="reference external" href="https://www.java.com/nl/">Java</a>.</p>
+<ul>
+<li><p>Kies op de website onder <code class="docutils literal notranslate"><span class="pre">Java</span> <span class="pre">voor</span> <span class="pre">desktops</span></code> de knop <code class="docutils literal notranslate"><span class="pre">Gratis</span> <span class="pre">Java</span> <span class="pre">Download</span></code>.</p></li>
+<li><p>Het bestand wordt gedownload naar je map <code class="docutils literal notranslate"><span class="pre">Downloads</span></code>.</p></li>
+<li><p>Dubbelklik op <code class="docutils literal notranslate"><span class="pre">jre-...-windows-x64.exe</span></code> om de installatie te starten en volg de instructies op het scherm.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">Java</span> <span class="pre">SE</span> <span class="pre">Development</span> <span class="pre">Kit</span> <span class="pre">(JDK)</span></code>, versie <code class="docutils literal notranslate"><span class="pre">21.0.9</span></code> of later.</p>
+<ul>
+<li><p>JDK versie 21.0.9 staat op Brightspace bij <code class="docutils literal notranslate"><span class="pre">Software</span></code>.</p></li>
+<li><p>De JDK is ook te downloaden via <a class="reference external" href="https://www.techspot.com/downloads/7703-java-21.html">Java SE Development Kit (JDK)</a>.</p></li>
+<li><p>Installeer de JDK (niet alleen de JRE), omdat de JDK nodig is voor het ontwikkelen van Java-toepassingen.</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Waarschuwing</p>
+<p>Downloadlinks kunnen wijzigen. Probeer eerst zelf een oplossing te vinden als een link niet werkt. Neem contact op met de practicumbegeleider als je daarna nog steeds problemen hebt met downloaden of installeren.</p>
+</div>
+<p>Test of de software correct is geinstalleerd:</p>
+<ol class="arabic simple">
+<li><p>Open het Startmenu en zoek naar <code class="docutils literal notranslate"><span class="pre">Structorizer</span></code>.</p></li>
+<li><p>Start de applicatie.</p></li>
+<li><p>Controleer of Structorizer zonder foutmeldingen opent.</p></li>
+</ol>
+<p><img alt="image" src="../_images/structorizer_leeg.jpg" /></p>
+<p><em>Figuur 1: Structorizer-programma</em></p>
+</section>
+<section id="opdracht-1-2-basisconstructies-in-psd-s">
+<h2>Opdracht 1.2: Basisconstructies in PSD’s<a class="headerlink" href="#opdracht-1-2-basisconstructies-in-psd-s" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>Alvorens je aan de opdrachten begint, is het belangrijk dat je de workshopbestanden hebt gedownload. Deze bestanden bevatten de benodigde code, schema’s en instructies voor de opdrachten die je zult uitvoeren tijdens de workshop. Zie <a class="reference internal" href="install.html#verkrijgen-van-de-workshopbestanden"><span class="std std-ref">Installatie-instructies</span></a> voor informatie over het verkrijgen van de workshopbestanden.</p>
+</div>
+<p>Gebruik voor deze opdracht het project <code class="docutils literal notranslate"><span class="pre">Framework_1.nsd</span></code>.</p>
+<ul class="simple">
+<li><p>Dit bestand staat in <code class="docutils literal notranslate"><span class="pre">opdracht1/structorizer</span></code> van de microcontrollers workshop.</p></li>
+<li><p>Zie <a class="reference internal" href="install.html"><span class="std std-doc">Installatie-instructies</span></a> voor informatie over het verkrijgen van de workshopbestanden.</p></li>
+</ul>
+<p><img alt="image" src="../_images/structorizer_framework1.jpg" /></p>
+<p><em>Figuur 2: Structorizer met framework 1</em></p>
+<p>Dit Structorizer-programma telt:</p>
+<ul class="simple">
+<li><p>het totaal aantal ingevoerde gehele getallen;</p></li>
+<li><p>hoeveel van die getallen kleiner zijn dan 5;</p></li>
+<li><p>hoeveel getallen groter dan of gelijk aan 5 zijn.</p></li>
+</ul>
+<p>Voer daarna de volgende stappen uit:</p>
+<ol class="arabic simple">
+<li><p>Start het programma via <code class="docutils literal notranslate"><span class="pre">Debug</span> <span class="pre">&gt;</span> <span class="pre">Executor</span></code> (zie figuur 2). Zet de delay op <code class="docutils literal notranslate"><span class="pre">0</span></code>. Start met de knop <code class="docutils literal notranslate"><span class="pre">Run</span></code> en controleer of het programma de beschreven functionaliteit heeft.</p></li>
+<li><p>Voer het programma opnieuw uit via <code class="docutils literal notranslate"><span class="pre">Debug</span> <span class="pre">&gt;</span> <span class="pre">Executor</span></code>, maar zet de delay op ongeveer <code class="docutils literal notranslate"><span class="pre">400</span></code>. Start daarna met <code class="docutils literal notranslate"><span class="pre">Run</span></code> en volg de programmastroom tijdens de uitvoering.</p></li>
+<li><p>Voer het programma opnieuw uit via <code class="docutils literal notranslate"><span class="pre">Debug</span> <span class="pre">&gt;</span> <span class="pre">Executor</span></code>, maar start nu met <code class="docutils literal notranslate"><span class="pre">Single</span> <span class="pre">Step</span></code>. Druk herhaaldelijk op deze knop en volg de programmastroom in het PSD. Let ook op de waarden van de variabelen.</p></li>
+<li><p>Pas het programma aan: voeg een teller toe die bijhoudt hoe vaak de waarde <code class="docutils literal notranslate"><span class="pre">5</span></code> is ingevoerd. Toon deze tellerwaarde ook. Gebruik de variabelenaam <code class="docutils literal notranslate"><span class="pre">teller5</span></code>.</p></li>
+<li><p>Pas het programma opnieuw aan: voeg een teller toe die bijhoudt hoe vaak de waarde <code class="docutils literal notranslate"><span class="pre">0</span></code> is ingevoerd. Toon deze tellerwaarde ook. Gebruik de variabelenaam <code class="docutils literal notranslate"><span class="pre">teller0</span></code>.</p></li>
+</ol>
+<p><img alt="image" src="../_images/structorizer_executer.jpg" /></p>
+<p><em>Figuur 3: Executor-venster</em></p>
+</section>
+<section id="opdracht-1-3-berekenen-van-het-gemiddelde-van-een-lijst-getallen">
+<h2>Opdracht 1.3: Berekenen van het gemiddelde van een lijst getallen<a class="headerlink" href="#opdracht-1-3-berekenen-van-het-gemiddelde-van-een-lijst-getallen" title="Link to this heading"></a></h2>
+<p>Gebruik voor deze opdracht het project <code class="docutils literal notranslate"><span class="pre">Framework_2.nsd</span></code>.</p>
+<p>Maak in Structorizer een programma dat het gemiddelde berekent van een lijst met in te voeren niet-negatieve getallen (dus positief of 0). Het programma moet aan de volgende eisen voldoen:</p>
+<ol class="arabic simple">
+<li><p>Er moet minimaal een getal worden ingevoerd.</p></li>
+<li><p>Het einde van de lijst met in te voeren niet-negatieve getallen wordt aangegeven met de waarde <code class="docutils literal notranslate"><span class="pre">-1</span></code>. Deze waarde telt niet mee voor het berekenen van het gemiddelde.</p></li>
+<li><p>Als de invoer van de lijst wordt afgesloten met de waarde <code class="docutils literal notranslate"><span class="pre">-1</span></code>, moeten het gemiddelde en het aantal ingevoerde getallen worden weergegeven.</p></li>
+<li><p>Het programma herhaalt zich oneindig.</p></li>
+</ol>
+</section>
+<section id="opdracht-1-4-uitbreiding-van-opdracht-1-3">
+<h2>Opdracht 1.4: Uitbreiding van opdracht 1.3<a class="headerlink" href="#opdracht-1-4-uitbreiding-van-opdracht-1-3" title="Link to this heading"></a></h2>
+<p>Breid de uitwerking van opdracht 1.3 uit, zodat ook wordt geteld hoe vaak de waarde <code class="docutils literal notranslate"><span class="pre">0</span></code> in de invoerlijst voorkomt. Toon deze waarde ook.</p>
+</section>
+<section id="opdracht-1-5-inleveren-van-de-opdracht">
+<h2>Opdracht 1.5: Inleveren van de opdracht<a class="headerlink" href="#opdracht-1-5-inleveren-van-de-opdracht" title="Link to this heading"></a></h2>
+<p>Maak een screenshot van je Structorizer-programma en van de uitvoer. Zorg ervoor dat duidelijk zichtbaar is dat je programma correct werkt en voldoet aan de eisen van de opdracht. Lever daarna de screenshot in via Brightspace bij <code class="docutils literal notranslate"><span class="pre">Opdracht</span> <span class="pre">1:</span> <span class="pre">Oefenen</span> <span class="pre">met</span> <span class="pre">PSD's</span></code>.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="install.html" class="btn btn-neutral float-left" title="Visual Studio Code en PlatformIO" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="assignment_2.html" class="btn btn-neutral float-right" title="Opdracht 2: Kennismaken met de Arduino Uno en PlatformIO" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Gerard Harkema &amp; Vincent Teuben.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

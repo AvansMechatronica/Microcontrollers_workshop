@@ -1,0 +1,333 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opdracht 6: Testen en simuleren van de signaallamp-besturing &mdash; Microcontrllers Workshop 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Voorbeeldprogramma’s" href="examples.html" />
+    <link rel="prev" title="Opdracht 5: Simulatie van signaallamp-besturing" href="assignment_5.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Microcontrllers Workshop
+              <img src="../_static/avans-hogeschool-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arduino.html">Arduino Uno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Visual Studio Code en PlatformIO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_1.html">Opdracht 1: Oefenen met PSD’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_2.html">Opdracht 2: Kennismaken met de Arduino Uno en PlatformIO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_3.html">Opdracht 3: Programmeren in C op de Arduino Uno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_4.html">Opdracht 4: Oefenen met functies in C</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_5.html">Opdracht 5: Simulatie van signaallamp-besturing</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Opdracht 6: Testen en simuleren van de signaallamp-besturing</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#integratie-en-simulatietesten-van-de-geimplementeerde-functies">Integratie- en simulatietesten van de geimplementeerde functies</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-6-1-test-1-arduino-shield">Opdracht 6.1 Test 1: Arduino + shield</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-6-2-test-2-arduino-shield-signaalzuil-simulator">Opdracht 6.2 Test 2: Arduino + shield + signaalzuil-simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-6-3-test-3-arduino-shield-level-shifter-plc-simulator">Opdracht 6.3 Test 3: Arduino + shield + level shifter + PLC-simulator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-6-3-test-4-arduino-shield-led-bar-level-shifter-besturings-plc">Opdracht 6.3 Test 4: Arduino + shield + LED-bar + level shifter + besturings-PLC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-6-4-test-5-arduino-shield-signaalzuil-level-shifter-besturings-plc">Opdracht 6.4 Test 5: Arduino + shield + signaalzuil + level shifter + besturings-PLC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-6-5-inleveren-van-de-opdrachten">Opdracht 6.5: Inleveren van de opdrachten</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Voorbeeldprogramma’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Veelgestelde vragen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teacher_manual.html">Docentenhandleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Microcontrllers Workshop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Opdracht 6: Testen en simuleren van de signaallamp-besturing</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/assignment_6.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="opdracht-6-testen-en-simuleren-van-de-signaallamp-besturing">
+<h1>Opdracht 6: Testen en simuleren van de signaallamp-besturing<a class="headerlink" href="#opdracht-6-testen-en-simuleren-van-de-signaallamp-besturing" title="Link to this heading"></a></h1>
+<p>In dit practicum test je het programma voor de signaallamp-besturing. Het PSD van het volledige programma staat in figuur 1.</p>
+<p><img alt="image" src="../_images/psd_volledige_besturing.png" /></p>
+<p><em>Figuur 1. PSD van het volledige besturingsprogramma</em></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p>Voor deze opdracht hoef je geen code te schrijven, maar alleen de code van de voorgaande opdrachten te testen en te simuleren. Voor de zekerheid bieden we je de uitweringen daarvan aan, zodat je deze kunt gebruiken als referentie. Open daartoe in Visual Studio Code het project <code class="docutils literal notranslate"><span class="pre">Framework_6</span></code> door de map <code class="docutils literal notranslate"><span class="pre">opdracht6/Framework_6</span></code> te openen.</p></li>
+<li><p>Het is niet verplicht om PSD’s te maken, maar dit mag wel ter verduidelijking.</p></li>
+</ul>
+</div>
+<section id="integratie-en-simulatietesten-van-de-geimplementeerde-functies">
+<h2>Integratie- en simulatietesten van de geimplementeerde functies<a class="headerlink" href="#integratie-en-simulatietesten-van-de-geimplementeerde-functies" title="Link to this heading"></a></h2>
+<p>Alle code moet eerst worden getest voordat de Arduino met shield wordt aangesloten op de level shifter en de PLC van de transportband. Het testen is gefaseerd:</p>
+<ol class="arabic simple">
+<li><p>Testen en simuleren met alleen Arduino + shield.</p></li>
+<li><p>Testen met Arduino + shield + PLC-simulator.</p></li>
+<li><p>Testen met Arduino + shield + PLC (onderdeel van de SAT: Site Acceptance Test).</p></li>
+</ol>
+<p>In dit practicum voer je simulatie 1 uit: testen met de knoppen op het shield.</p>
+</section>
+<section id="opdracht-6-1-test-1-arduino-shield">
+<h2>Opdracht 6.1 Test 1: Arduino + shield<a class="headerlink" href="#opdracht-6-1-test-1-arduino-shield" title="Link to this heading"></a></h2>
+<p>In deze test simuleer je het SYNC-signaal en de functiecode met de drukknoppen, en controleer je het gedrag via de LED’s op het shield.</p>
+<p>Deze simulatie wijkt af van test 2 en 3, omdat de knoppen op het shield geinverteerd werken: ingedrukt geeft logische <code class="docutils literal notranslate"><span class="pre">1</span></code>, niet-ingedrukt geeft logische <code class="docutils literal notranslate"><span class="pre">0</span></code>.</p>
+<p>Pas voor deze simulatie alleen de benodigde code minimaal aan, in de functie <code class="docutils literal notranslate"><span class="pre">IsSyncBitSet()</span></code>.</p>
+<p>N.B.: voor test 2 en 3 moet je weer de gewone (niet-aangepaste) versie van <code class="docutils literal notranslate"><span class="pre">IsSyncBitSet()</span></code> gebruiken.</p>
+<p>De simulatie verloopt als volgt:</p>
+<ol class="arabic simple">
+<li><p>Simuleer een functiecode tussen <code class="docutils literal notranslate"><span class="pre">0</span></code> en <code class="docutils literal notranslate"><span class="pre">7</span></code> door 0 of meer knoppen D2..D0 in te drukken. Houd deze knoppen ingedrukt.</p></li>
+<li><p>Druk vervolgens op knop D3 om een opgaande flank van het SYNC-signaal te simuleren.</p></li>
+<li><p>Bij correcte simulatie gaan LED’s B3..B0 aan, evenals de SYNC-LED (B6).</p></li>
+<li><p>Bij correcte simulatie gaat ook LED B7 aan (meest rechter LED), omdat die op het shield direct gekoppeld is aan ACK.</p></li>
+<li><p>Laat de knoppen D2..D0 los.</p></li>
+<li><p>Laat knop D3 los (simulatie van inactief worden van SYNC).</p></li>
+<li><p>Bij correcte simulatie gaan zowel de SYNC-LED (B6) als de ACK-LED (B7) uit.</p></li>
+</ol>
+</section>
+<section id="opdracht-6-2-test-2-arduino-shield-signaalzuil-simulator">
+<h2>Opdracht 6.2 Test 2: Arduino + shield + signaalzuil-simulator<a class="headerlink" href="#opdracht-6-2-test-2-arduino-shield-signaalzuil-simulator" title="Link to this heading"></a></h2>
+<p>Wanneer test 1 succesvol is uitgevoerd, sluit je de LED-bar met kleuren-LED’s aan als simulatie van de signaalzuil. Controleer op dezelfde manier als in test 1 of de juiste kleuren worden aangestuurd.</p>
+<p>Sluit Arduino-shield en LED-bar aan volgens tabel 1 en figuur 2.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Arduino shield</p></th>
+<th class="head"><p>LED-bar</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>+24V</p></td>
+<td><p>+24V</p></td>
+</tr>
+<tr class="row-odd"><td><p>L0</p></td>
+<td><p>R (red)</p></td>
+</tr>
+<tr class="row-even"><td><p>L1</p></td>
+<td><p>Y (yellow)</p></td>
+</tr>
+<tr class="row-odd"><td><p>L2</p></td>
+<td><p>G (green)</p></td>
+</tr>
+<tr class="row-even"><td><p>L3</p></td>
+<td><p>N (blue)</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Tabel 1. Aansluitingen Arduino-shield en LED-bar</em></p>
+<p><img alt="image" src="../_images/arduino-shield-led-bar.png" /></p>
+<p><em>Figuur 2. Aansluitingen Arduino-shield en LED-bar</em></p>
+</section>
+<section id="opdracht-6-3-test-3-arduino-shield-level-shifter-plc-simulator">
+<h2>Opdracht 6.3 Test 3: Arduino + shield + level shifter + PLC-simulator<a class="headerlink" href="#opdracht-6-3-test-3-arduino-shield-level-shifter-plc-simulator" title="Link to this heading"></a></h2>
+<p>Wanneer test 2 succesvol is afgerond, vervang je de knopbesturing van de handshakesignalen door besturing via PLC-inputs. Daarvoor gebruik je een PLC-simulator via de level shifter.</p>
+<p>N.B.: de level shifter moet voorzien zijn van de juiste weerstanden (zoals berekend bij het practicum Netwerken) en de spanningen moeten daar zijn gecontroleerd.</p>
+<p>Sluit de PLC-simulator en de level shifter aan volgens tabel 2 en figuur 3.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>PLC-simulator</p></th>
+<th class="head"><p>Level shifter</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>+24V OUT</p></td>
+<td><p>+24VDC IN</p></td>
+</tr>
+<tr class="row-odd"><td><p>ACK IN</p></td>
+<td><p>PLC ACK OUT</p></td>
+</tr>
+<tr class="row-even"><td><p>SYNC OUT</p></td>
+<td><p>PLC SYNC IN</p></td>
+</tr>
+<tr class="row-odd"><td><p>FC2 OUT</p></td>
+<td><p>PLC IN 2</p></td>
+</tr>
+<tr class="row-even"><td><p>FC1 OUT</p></td>
+<td><p>PLC IN 1</p></td>
+</tr>
+<tr class="row-odd"><td><p>FC0 OUT</p></td>
+<td><p>PLC IN 0</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Tabel 2. Aansluitingen PLC-simulator en level shifter</em></p>
+<p><img alt="image" src="../_images/plc-simulator-level-shifter.png" /></p>
+<p><em>Figuur 3. Aansluitingen PLC-simulator en level shifter</em></p>
+<p>Sluit vervolgens de level shifter en het Arduino-shield aan volgens tabel 3 en figuur 4.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Level shifter</p></th>
+<th class="head"><p>Arduino shield</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ACK IN</p></td>
+<td><p>ACK OUT</p></td>
+</tr>
+<tr class="row-odd"><td><p>SYNC OUT</p></td>
+<td><p>SYNC IN</p></td>
+</tr>
+<tr class="row-even"><td><p>OUT0</p></td>
+<td><p>IN0</p></td>
+</tr>
+<tr class="row-odd"><td><p>OUT1</p></td>
+<td><p>IN1</p></td>
+</tr>
+<tr class="row-even"><td><p>OUT2</p></td>
+<td><p>IN2</p></td>
+</tr>
+<tr class="row-odd"><td><p>GND</p></td>
+<td><p>GND</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Tabel 3. Aansluitingen level shifter en Arduino-shield</em></p>
+<p><img alt="image" src="../_images/level-shifter-arduino-shield.png" /></p>
+<p><em>Figuur 4. Aansluitingen level shifter en Arduino-shield</em></p>
+<p>Op de PLC-simulator zijn standaardprogramma’s beschikbaar voor de signaalzuil (tabel 4).</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Simulatieprogramma</p></th>
+<th class="head"><p>Functie</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>0</p></td>
+<td><p>PLC-simulator staat uit en genereert geen handshake-signalen</p></td>
+</tr>
+<tr class="row-odd"><td><p>1</p></td>
+<td><p>Stuur permanent function code 0 uit (groen)</p></td>
+</tr>
+<tr class="row-even"><td><p>2</p></td>
+<td><p>Stuur permanent function code 1 uit (geel)</p></td>
+</tr>
+<tr class="row-odd"><td><p>3</p></td>
+<td><p>Stuur permanent function code 2 uit (rood)</p></td>
+</tr>
+<tr class="row-even"><td><p>4</p></td>
+<td><p>Stuur permanent function code 3 uit (groen + geel)</p></td>
+</tr>
+<tr class="row-odd"><td><p>5</p></td>
+<td><p>Stuur permanent function code 4 uit (rood + geel)</p></td>
+</tr>
+<tr class="row-even"><td><p>6</p></td>
+<td><p>Stuur permanent function code 5 uit (blauw)</p></td>
+</tr>
+<tr class="row-odd"><td><p>7</p></td>
+<td><p>Stuur permanent function code 6 uit (blauw)</p></td>
+</tr>
+<tr class="row-even"><td><p>8</p></td>
+<td><p>Stuur permanent function code 7 uit (blauw)</p></td>
+</tr>
+<tr class="row-odd"><td><p>9</p></td>
+<td><p>Stuur achtereenvolgens function codes 0 t/m 7 uit met tussenpauzes van een halve seconde</p></td>
+</tr>
+</tbody>
+</table>
+<p><em>Tabel 4. PLC-simulatieprogramma’s</em></p>
+<p>Met de draaiknop <code class="docutils literal notranslate"><span class="pre">PROGRAM</span> <span class="pre">SELECT</span></code> kies je het gewenste simulatieprogramma. Op het OLED-scherm zie je deze keuze en de functiecode.</p>
+<p>Bij simulatieprogramma’s 1 t/m 9 moet altijd een volledige handshake met SYNC en ACK worden uitgevoerd. Controleer status en foutmeldingen via de SYNC-LED, ACK-LED en het OLED-scherm.</p>
+<p>Controleer of alle simulatieprogramma’s uit tabel 4 correct werken. Zo niet:</p>
+<ol class="arabic simple">
+<li><p>Controleer eerst bedrading en aansluitingen.</p></li>
+<li><p>Zoek daarna de fout in de Arduino-code en pas de code aan.</p></li>
+</ol>
+</section>
+<section id="opdracht-6-3-test-4-arduino-shield-led-bar-level-shifter-besturings-plc">
+<h2>Opdracht 6.3 Test 4: Arduino + shield + LED-bar + level shifter + besturings-PLC<a class="headerlink" href="#opdracht-6-3-test-4-arduino-shield-led-bar-level-shifter-besturings-plc" title="Link to this heading"></a></h2>
+<p>Wanneer test 3 succesvol is afgerond, voer je de integratietest uit met de PLC van de transportband, de level shifter en de Arduino.</p>
+<p>Sluit hiervoor de level shifter aan op de PLC in plaats van op de PLC-simulator. Voer daarna het aangeleverde PLC-testprogramma uit zodat de juiste signalen worden gegenereerd.</p>
+</section>
+<section id="opdracht-6-4-test-5-arduino-shield-signaalzuil-level-shifter-besturings-plc">
+<h2>Opdracht 6.4 Test 5: Arduino + shield + signaalzuil + level shifter + besturings-PLC<a class="headerlink" href="#opdracht-6-4-test-5-arduino-shield-signaalzuil-level-shifter-besturings-plc" title="Link to this heading"></a></h2>
+<p>Wanneer test 4 succesvol is afgerond, vervang je de LED-bar door de signaalzuil. Controleer of de juiste kleuren op de lampen worden weergegeven.</p>
+</section>
+<section id="opdracht-6-5-inleveren-van-de-opdrachten">
+<h2>Opdracht 6.5: Inleveren van de opdrachten<a class="headerlink" href="#opdracht-6-5-inleveren-van-de-opdrachten" title="Link to this heading"></a></h2>
+<p>Lever je rapportage in op Brightspace. Gebruik hiervoor het document <code class="docutils literal notranslate"><span class="pre">Rapportage_Opdracht_6.docx</span></code> in de map <code class="docutils literal notranslate"><span class="pre">opdracht6</span></code> van de microcontrollers workshop. In dit document vul je de antwoorden op de vragen en de conclusies van de verschillende opdrachten in.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="assignment_5.html" class="btn btn-neutral float-left" title="Opdracht 5: Simulatie van signaallamp-besturing" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="examples.html" class="btn btn-neutral float-right" title="Voorbeeldprogramma’s" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Gerard Harkema &amp; Vincent Teuben.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
