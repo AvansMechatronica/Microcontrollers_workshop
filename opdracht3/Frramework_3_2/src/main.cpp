@@ -18,6 +18,7 @@
 #include <stdbool.h>
 #include <avr/interrupt.h>
 
+
 ///////////////////////////////////////////////////////////////////////////////
 // application specific includes
 
@@ -29,29 +30,18 @@
 // program entry point
 // Paats hier de code die je in de main functie wilt uitvoeren
 
-
 void setup(void)
 {
 	Serial.begin(19200);
 	initPorts();
 
 	Serial.println("Setup complete.");
+	PORTD = 0x00;	// all LED's off
 }
 
 void loop(void)
 
 {
-	// declareer hier de variabele van het type uint8_t met naam: teller
-
-	initPorts();
-	initTimer();
-
-	while (true)
-	{
-		// voeg hier C-code toe voor een teller
-		// -  gebruik PORTD om de tellerstand te displayen.
-		// - maak gebruik van de variabele teller	
-	}
-
+	// voeg hier de uitwerking in van de opdracht(en)
 	
 }

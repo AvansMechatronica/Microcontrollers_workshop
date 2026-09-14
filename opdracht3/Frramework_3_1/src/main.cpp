@@ -36,20 +36,14 @@ void setup(void)
 	initPorts();
 
 	Serial.println("Setup complete.");
+
+	PORTD = 0x00;	// all LED's off
+
 }
 
 void loop(void)
 
 {
-	initPorts();
-	initTimer();
-	
-	PORTD = 0x00;	// all LED's off
-	
-	while (true)
-	{
-		// voeg hier de uitwerking in van de opdracht(en)
-	}
-	
+	// voeg hier de uitwerking in van de opdracht(en)
 	
 }

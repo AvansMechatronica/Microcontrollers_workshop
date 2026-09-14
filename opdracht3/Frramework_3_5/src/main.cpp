@@ -30,30 +30,19 @@
 // program entry point
 // Paats hier de code die je in de main functie wilt uitvoeren
 
-
 void setup(void)
 {
 	Serial.begin(19200);
 	initPorts();
 
 	Serial.println("Setup complete.");
+
+	PORTD = 0x00;	// all LED's off
 }
 
 void loop(void)
 
 {
-	initPorts();
-
-	while(true)
-	{
-		// voeg hier C-code toe waarmee het gedrag van
-		// de switches kan worden onderzocht.
-		// Maak hiervoor gebruik van PORTD en PINB
-
-		// N.B.: kijk UITSLUITEND naar de LED's B3..B0!!
-
-		PORTD = 0;
-	}
-
+	// voeg hier de uitwerking in van de opdracht(en)
 	
 }
