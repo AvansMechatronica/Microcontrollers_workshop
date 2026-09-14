@@ -9,6 +9,10 @@
 #ifndef TIMER0_H_
 #define TIMER0_H_
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #define OCR0_CALL_COMPENSATION 9
 
 void timer0_Start(void);
@@ -19,5 +23,9 @@ void timer0_SetCompareValue(uint8_t count);
 
 void initTimer(void);
 void delayms(uint32_t milliSeconds);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif /* TIMER0_H_ */

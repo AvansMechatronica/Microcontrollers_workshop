@@ -30,7 +30,10 @@
 
 void setup(void)
 {
+	Serial.begin(19200);
 	initPorts();
+
+	Serial.println("Setup complete.");
 }
 
 void loop(void)
