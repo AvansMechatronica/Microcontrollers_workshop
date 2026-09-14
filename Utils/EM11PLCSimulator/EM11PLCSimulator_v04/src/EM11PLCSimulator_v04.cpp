@@ -430,9 +430,27 @@ const char *OLEDProgramText[] =
 
 
 ///////////////////////////////////////////////////////////////////////////////
-//	int main(void)
+//	void setup(void)
+{
+	Serial.begin(19200);
+	initPorts();
 
-int main(void)
+	Serial.println("Setup complete.");
+}
+
+void loop(void)
+
+
+void setup(void)
+{
+	Serial.begin(19200);
+	initPorts();
+
+	Serial.println("Setup complete.");
+}
+
+void loop(void)
+
 {
 	uint8_t currentProgram  = 0;
 	uint8_t previousProgram = 0;

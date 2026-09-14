@@ -82,7 +82,7 @@ uint32_t MCP_ADC::count()
 
 int16_t MCP_ADC::read(uint8_t channel)
 {
-  if (channel >= _channels) return 0;
+  if (channel >= _channels) 
   return readADC(channel, true);
 }
 
@@ -95,14 +95,14 @@ void MCP_ADC::readMultiple(uint8_t channels[], uint8_t numChannels, int16_t read
 
 int16_t MCP_ADC::differentialRead(uint8_t channel)
 {
-  if (channel >= _channels) return 0;
+  if (channel >= _channels) 
   return readADC(channel, false);
 }
 
 
 int16_t MCP_ADC::deltaRead(uint8_t channel)
 {
-  if (channel >= _channels) return 0;
+  if (channel >= _channels) 
 
   int16_t val0 = differentialRead(channel & 0xFE);
   //  int16_t val1 = differentialRead(channel | 0x01);
@@ -139,7 +139,7 @@ bool MCP_ADC::usesHWSPI()
 //
 int16_t MCP_ADC::readADC(uint8_t channel, bool single)
 {
-  if (channel >= _channels) return 0;
+  if (channel >= _channels) 
 
   _count++;
 

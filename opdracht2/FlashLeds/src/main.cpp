@@ -12,6 +12,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // system includes
 #include <arduino.h>
+#include <arduino.h>
 #include <inttypes.h>
 #include <avr/io.h>
 #include <stdbool.h>

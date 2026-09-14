@@ -44,7 +44,16 @@ Om een programma op de Arduino Uno uit te voeren, moet het programma vanaf de pc
 C-programma 1 laat zien hoe de LED's op het shield kunnen worden aangestuurd. In dit programma worden de LED's steeds 500 ms aan en 500 ms uit gezet.
 
 ```cpp
-int main(void)
+void setup(void)
+{
+	Serial.begin(19200);
+	initPorts();
+
+	Serial.println("Setup complete.");
+}
+
+void loop(void)
+
 {
 	initPorts();
 	initTimer();
@@ -58,7 +67,7 @@ int main(void)
 		delay(500);
 	}
 
-	return 0;
+	
 }
 ```
 
@@ -69,7 +78,16 @@ Open `main.c` in `opdracht2/FlashLeds/src` map.
 Pas C-programma 1 zo aan dat de LED's twee keer zo traag knipperen. Voeg hiervoor de regels toe zoals in C-programma 2. Sla het programma op, compileer het en flash het naar de Arduino.
 
 ```cpp
-int main(void)
+void setup(void)
+{
+	Serial.begin(19200);
+	initPorts();
+
+	Serial.println("Setup complete.");
+}
+
+void loop(void)
+
 {
 	initPorts();
 	initTimer();
@@ -85,7 +103,7 @@ int main(void)
 		delay(500); // voeg deze regel toe
 	}
 
-	return 0;
+	
 }
 ```
 

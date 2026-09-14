@@ -26,12 +26,12 @@
 //------------------------------------------------------------------------------
 uint8_t SSD1306Ascii::charWidth(uint8_t c) const {
   if (!m_font) {
-    return 0;
+    
   }
   uint8_t first = readFontByte(m_font + FONT_FIRST_CHAR);
   uint8_t count = readFontByte(m_font + FONT_CHAR_COUNT);
   if (c < first || c >= (first + count)) {
-    return 0;
+    
   }
   if (fontSize() > 1) {
     // Proportional font.
@@ -206,7 +206,7 @@ size_t SSD1306Ascii::strWidth(const char* str) const {
   while (*str) {
     uint8_t cw = charWidth(*str++);
     if (cw == 0) {
-      return 0;
+      
     }
     sw += cw + letterSpacing();
   }
@@ -244,7 +244,7 @@ int8_t SSD1306Ascii::tickerTick(TickerState* state) {
     return -1;
   }
   if (!state->nQueue) {
-    return 0;
+    
   }
   setFont(state->font);
   m_magFactor = state->mag2X ? 2 : 1;
@@ -279,7 +279,7 @@ int8_t SSD1306Ascii::tickerTick(TickerState* state) {
 
   if (state->nQueue == 1 && *state->queue[0] == 0) {
     state->nQueue = 0;
-    return 0;
+    
   }
   if (state->col > state->bgnCol) {
     state->col--;
@@ -301,7 +301,7 @@ int8_t SSD1306Ascii::tickerTick(TickerState* state) {
 //------------------------------------------------------------------------------
 size_t SSD1306Ascii::write(uint8_t ch) {
   if (!m_font) {
-    return 0;
+    
   }
   uint8_t w = readFontByte(m_font + FONT_WIDTH);
   uint8_t h = readFontByte(m_font + FONT_HEIGHT);
@@ -344,7 +344,7 @@ size_t SSD1306Ascii::write(uint8_t ch) {
     nfSpace = true;
   } else {
     // Error if not in font.
-    return 0;
+    
   }
   uint8_t s = letterSpacing();
   uint8_t thieleShift = 0;

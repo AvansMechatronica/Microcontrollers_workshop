@@ -12,6 +12,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // system includes
 
+#include <arduino.h>
 #include <inttypes.h>
 #include <avr/io.h>
 #include <stdbool.h>
@@ -21,7 +22,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // application specific includes
 
-#include "delay.h"
+
 #include "ports328.h"
 #include "timer0.h"
 
@@ -30,19 +31,19 @@
 // Paats hier de code die je in de main functie wilt uitvoeren
 
 
-int main(void)
+void setup(void)
 {
+	Serial.begin(19200);
 	initPorts();
-	initTimer();
 
-	while(true)
-	{
-		// voeg hier C-code toe waarmee het gedrag van
-		// de LED's kan worden onderzocht.
-		// Maak hiervoor gebruik van PORTD
+	Serial.println("Setup complete.");
+}
 
-		PORTD = 0;
-	}
+void loop(void)
+{
+	// voeg hier C-code toe waarmee het gedrag van
+	// de LED's kan worden onderzocht.
+	// Maak hiervoor gebruik van PORTD
 
-	return 0;
+	PORTD = 0;
 }

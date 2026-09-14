@@ -13,6 +13,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // system includes
 
+#include <arduino.h>
 #include <inttypes.h>
 #include <avr/io.h>
 #include <stdbool.h>
@@ -21,7 +22,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // user includes
 
-#include "delay.h"
+
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -63,7 +64,16 @@ uint8_t DupliceerBits30Naar74(uint8_t getal)
 // program entry point
 
 
-int main(void)
+void setup(void)
+{
+	Serial.begin(19200);
+	initPorts();
+
+	Serial.println("Setup complete.");
+}
+
+void loop(void)
+
 {
 	uint8_t teller    = 0;
 	uint8_t resultaat = 0;
@@ -96,7 +106,7 @@ int main(void)
 
     }
 
-    return 0;  // hier kom ik dus nooit...
+      // hier kom ik dus nooit...
 }
 
 

@@ -577,8 +577,8 @@ uint16_t OLEDDisplay::drawStringInternal(int16_t xMove, int16_t yMove, const cha
   }
 
   // Don't draw anything if it is not on the screen.
-  if (xMove + textWidth  < 0 || xMove >= this->width() ) {return 0;}
-  if (yMove + textHeight < 0 || yMove >= this->height()) {return 0;}
+  if (xMove + textWidth  < 0 || xMove >= this->width() ) {}
+  if (yMove + textHeight < 0 || yMove >= this->height()) {}
 
   for (uint16_t j = 0; j < textLength; j++) {
     int16_t xPos = xMove + cursorX;
@@ -624,7 +624,7 @@ uint16_t OLEDDisplay::drawString(int16_t xMove, int16_t yMove, const String &str
   char* text = strdup(strUser.c_str());
   if (!text) {
     DEBUG_OLEDDISPLAY("[OLEDDISPLAY][drawString] Can't allocate char array.\n");
-    return 0;
+    
   }
 
   uint16_t yOffset = 0;
@@ -715,7 +715,7 @@ uint16_t OLEDDisplay::drawStringMaxWidth(int16_t xMove, int16_t yMove, uint16_t 
 
   if (drawStringResult == 0 || (yMove + lineNumber * lineHeight) >= this->height()) // text did not fit on screen
     return firstLineChars;
-  return 0; // everything was drawn
+   // everything was drawn
 }
 
 uint16_t OLEDDisplay::getStringWidth(const char* text, uint16_t length, bool utf8) {
@@ -999,7 +999,7 @@ size_t OLEDDisplay::write(uint8_t c) {
 }
 
 size_t OLEDDisplay::write(const char* str) {
-  if (str == NULL) return 0;
+  if (str == NULL) 
   size_t length = strlen(str);
   // If we write a string, only do the drawLogBuffer at the end, not every time we write a char
   this->inhibitDrawLogBuffer = true;

@@ -13,6 +13,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // system includes
 
+#include <arduino.h>
 #include <inttypes.h>
 #include <avr/io.h>
 #include <stdbool.h>
@@ -21,7 +22,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // application specific includes
 
-#include "delay.h"
+
 #include "ports328.h"
 #include "UartLib.h"
 #include "timer0.h"
@@ -253,7 +254,16 @@ void delayms(uint32_t milliSeconds)
 ///////////////////////////////////////////////////////////////////////////////
 // program entry point
 
-int main(void)
+void setup(void)
+{
+	Serial.begin(19200);
+	initPorts();
+
+	Serial.println("Setup complete.");
+}
+
+void loop(void)
+
 {
 	uint8_t functionCode = 0;
 	uint8_t inputValue = 0;
@@ -312,5 +322,5 @@ int main(void)
 		}
 	}
 
-	return 0;
+	
 }

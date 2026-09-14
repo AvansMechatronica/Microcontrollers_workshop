@@ -173,7 +173,7 @@ void Encoder::setEncoder(int pinA, int pinB, encoder_mode_t mode, uint8_t filter
 		
 	   Encoder_Handle.Instance = (TIM_TypeDef *)pinmap_peripheral(digitalPinToPinName(_pinA), PinMap_TIM);
 	   enableTimerClock(&Encoder_Handle);
-	   if(HAL_TIM_Encoder_Init(&Encoder_Handle, &sEncoderConfig) != HAL_OK) return 0;
+	   if(HAL_TIM_Encoder_Init(&Encoder_Handle, &sEncoderConfig) != HAL_OK) 
 	   HAL_TIM_Encoder_Start(&Encoder_Handle, TIM_CHANNEL_ALL);
 	   return 1;
 	}

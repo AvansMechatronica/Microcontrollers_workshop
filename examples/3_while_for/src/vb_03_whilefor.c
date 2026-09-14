@@ -12,6 +12,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // system includes
 
+#include <arduino.h>
 #include <inttypes.h>
 #include <avr/io.h>
 #include <stdbool.h>
@@ -21,6 +22,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // system includes
 
+#include <arduino.h>
 #include <inttypes.h>
 #include <avr/io.h>
 #include <stdbool.h>
@@ -29,12 +31,21 @@
 ///////////////////////////////////////////////////////////////////////////////
 // application specific includes
 
-#include "delay.h"
+
 #include "ports328.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 // program entry point
-int main(void)
+void setup(void)
+{
+	Serial.begin(19200);
+	initPorts();
+
+	Serial.println("Setup complete.");
+}
+
+void loop(void)
+
 {
 	uint8_t teller = 0;
 
@@ -73,5 +84,5 @@ int main(void)
 		}
 	}
 
-	return 0;  // hier kom ik dus nooit...
+	  // hier kom ik dus nooit...
 }

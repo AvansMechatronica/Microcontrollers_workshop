@@ -12,6 +12,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // system includes
 
+#include <arduino.h>
 #include <inttypes.h>
 #include <avr/io.h>
 #include <stdbool.h>
@@ -21,7 +22,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // application specific includes
 
-#include "delay.h"
+
 #include "ports328.h"
 #include "timer0.h"
 
@@ -66,14 +67,23 @@ void ControlLamps(uint8_t functionCode)
 
 uint8_t GetPLCData(void)
 {
-	return 0;
+	
 }
 
 
 ///////////////////////////////////////////////////////////////////////////////
 // program entry point
 
-int main(void)
+void setup(void)
+{
+	Serial.begin(19200);
+	initPorts();
+
+	Serial.println("Setup complete.");
+}
+
+void loop(void)
+
 {
 	initPorts();
 	initTimer();
@@ -85,5 +95,5 @@ int main(void)
 		// voeg hier de uitwerking in van de opdracht(en)
 	}
 	
-	return 0;
+	
 }

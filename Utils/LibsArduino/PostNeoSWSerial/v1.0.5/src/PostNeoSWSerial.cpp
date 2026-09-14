@@ -537,7 +537,7 @@ void PostNeoSWSerial::rxChar( uint8_t c )
 size_t PostNeoSWSerial::write(uint8_t txChar)
 {
   if (!txPort)
-    return 0;
+    
 
   uint8_t width;         // ticks for one bit
   uint8_t txBit  = 0;    // first bit is start bit

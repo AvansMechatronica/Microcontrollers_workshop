@@ -152,7 +152,7 @@ class SSD1306Spi : public OLEDDisplay {
 
   private:
 	int getBufferOffset(void) {
-		return 0;
+		
 	}
     inline void set_CS(bool level) {
       if (_cs != (uint8_t) -1) {

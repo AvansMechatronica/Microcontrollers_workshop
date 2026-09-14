@@ -177,7 +177,7 @@ bool I2C_eeprom::verifyBlock(const uint16_t memoryAddress, const uint8_t * buffe
 //  returns 0 == OK
 int I2C_eeprom::updateByte(const uint16_t memoryAddress, const uint8_t data)
 {
-  if (data == readByte(memoryAddress)) return 0;
+  if (data == readByte(memoryAddress)) 
   return writeByte(memoryAddress, data);
 }
 
@@ -291,7 +291,7 @@ bool I2C_eeprom::updateBlockVerify(const uint16_t memoryAddress, const uint8_t *
 uint32_t I2C_eeprom::determineSize(const bool debug)
 {
   // try to read a byte to see if connected
-  if (! isConnected()) return 0;
+  if (! isConnected()) 
 
   uint8_t patAA = 0xAA;
   uint8_t pat55 = 0x55;
@@ -325,7 +325,7 @@ uint32_t I2C_eeprom::determineSize(const bool debug)
 
     if (folded) return size;
   }
-  return 0;
+  
 }
 
 
@@ -343,7 +343,7 @@ uint32_t I2C_eeprom::determineSizeNoWrite()
 {
   #define BUFSIZE (32)
   //  try to read a byte to see if connected
-  if (!isConnected()) return 0;
+  if (!isConnected()) 
 
   bool addressSize = _isAddressSizeTwoWords;
   _isAddressSizeTwoWords = true;  //  Otherwise reading large EEPROMS fails
@@ -411,7 +411,7 @@ uint32_t I2C_eeprom::determineSizeNoWrite()
     }
   }
   _isAddressSizeTwoWords = addressSize;
-  return 0;
+  
 }
 
 
@@ -564,7 +564,7 @@ int I2C_eeprom::_pageBlock(const uint16_t memoryAddress, const uint8_t * buffer,
     if (incrBuffer) buffer += count;
     len -= count;
   }
-  return 0;
+  
 }
 
 
@@ -644,7 +644,7 @@ uint8_t I2C_eeprom::_ReadBlock(const uint16_t memoryAddress, uint8_t * buffer, c
 //      SPRN("\t");
 //      SPRNL(rv);
 //    }
-    return 0;  //  error
+      //  error
   }
 
   //  readBytes will always be equal or smaller to length

@@ -13,6 +13,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // system includes
 
+#include <arduino.h>
 #include <inttypes.h>
 #include <avr/io.h>
 #include <stdbool.h>
@@ -21,14 +22,23 @@
 ///////////////////////////////////////////////////////////////////////////////
 // user includes
 
-#include "delay.h"
+
 
 
 ///////////////////////////////////////////////////////////////////////////////
 // program entry point
 
 
-int main(void)
+void setup(void)
+{
+	Serial.begin(19200);
+	initPorts();
+
+	Serial.println("Setup complete.");
+}
+
+void loop(void)
+
 {
 	DDRB  = 0xf0;	// B: bits 3..0 inputs, bits 7..4 outputs
     DDRD  = 0xff;	// D: gebruik 8 bits van poort D als OUTput
@@ -67,7 +77,7 @@ int main(void)
 
     }
 
-    return 0;  // hier kom ik dus nooit...
+      // hier kom ik dus nooit...
 }
 
 

@@ -12,6 +12,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // system includes
 
+#include <arduino.h>
 #include <inttypes.h>
 #include <avr/io.h>
 #include <stdbool.h>
@@ -20,7 +21,7 @@
 ///////////////////////////////////////////////////////////////////////////////
 // application specific includes
 
-#include "delay.h"
+
 #include "ports328.h"
 #include "timer0.h"
 
@@ -115,7 +116,16 @@ void WriteOutput(uint8_t val)
 ///////////////////////////////////////////////////////////////////////////////
 // program entry point
 
-int main(void)
+void setup(void)
+{
+	Serial.begin(19200);
+	initPorts();
+
+	Serial.println("Setup complete.");
+}
+
+void loop(void)
+
 {
 	uint8_t switches = 0;
 	uint16_t delayTime = 500;
@@ -174,5 +184,5 @@ int main(void)
 		}
 	}
 
-	return 0;
+	
 }
