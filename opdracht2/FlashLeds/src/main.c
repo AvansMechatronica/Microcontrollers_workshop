@@ -11,7 +11,7 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 // system includes
-
+#include <arduino.h>
 #include <inttypes.h>
 #include <avr/io.h>
 #include <stdbool.h>
@@ -21,7 +21,6 @@
 ///////////////////////////////////////////////////////////////////////////////
 // application specific includes
 
-#include "delay.h"
 #include "ports328.h"
 #include "timer0.h"
 
@@ -29,19 +28,16 @@
 // program entry point
 // Paats hier de code die je in de main functie wilt uitvoeren
 
-
-int main(void)
+void setup(void)
 {
 	initPorts();
+}
 
-	while (true) // endless loop, flash the LED's on PORTD
-	{
-		PORTD = 255;
-		delay(500);
+void loop(void)
+{
+	PORTD = 255;
+	delay(500);
 
-		PORTD = 0;
-		delay(500);
-	}
-
-	return 0;
+	PORTD = 0;
+	delay(500);
 }
