@@ -4,7 +4,7 @@
 *  Copyright (c) 2019 by Avans Hogeschool.
 * 
 *  Date:    23-jan-2019
-*  Author:  R. Smeets
+*  Author:  R. Smeets & G.A. Harkema
 *
 *
 */
@@ -21,6 +21,8 @@
 
 ///////////////////////////////////////////////////////////////////////////////
 // user includes
+#include "ports328.h"
+#include "timer0.h"
 
 
 
@@ -70,43 +72,35 @@ void setup(void)
 	initPorts();
 
 	Serial.println("Setup complete.");
+
 }
 
+uint8_t teller    = 0;
+uint8_t resultaat = 0;
+uint8_t ledsAan   = 0xff;
+
 void loop(void)
-
 {
-	uint8_t teller    = 0;
-	uint8_t resultaat = 0;
-	uint8_t ledsAan   = 0xff;
 
-    DDRC   = 0x00;  // gebruik 8 bits van poort C als INput
-    DDRD   = 0xff;  // gebruik 8 bits van poort D als OUTput
+	for (teller = 0; teller < 8; teller++)	// teller loopt van 0..7
+	{
+		resultaat = TelBijElkaarop(teller, 128);  // functie aanroep, bit 7 is nu altijd AAN
 
-    while(true)  // boolean!
-    {
-
-		for (teller = 0; teller < 8; teller++)	// teller loopt van 0..7
-		{
-			resultaat = TelBijElkaarop(teller, 128);  // functie aanroep, bit 7 is nu altijd AAN
-
-			PORTD = ~resultaat;
-			delay(500);
-		}
-
-		PORTD = ~ledsAan;
+		PORTD = ~resultaat;
 		delay(500);
+	}
 
-		for (teller = 0; teller < 16; teller++)	// teller loopt van 0..15
-		{
-			resultaat = DupliceerBits30Naar74(teller);  // functie aanroep, bit 7 moet nu AAN zijn
+	PORTD = ~ledsAan;
+	delay(500);
 
-			PORTD = ~resultaat;
-			delay(500);
-		}
+	for (teller = 0; teller < 16; teller++)	// teller loopt van 0..15
+	{
+		resultaat = DupliceerBits30Naar74(teller);  // functie aanroep, bit 7 moet nu AAN zijn
 
-    }
+		PORTD = ~resultaat;
+		delay(500);
+	}
 
-      // hier kom ik dus nooit...
 }
 
 

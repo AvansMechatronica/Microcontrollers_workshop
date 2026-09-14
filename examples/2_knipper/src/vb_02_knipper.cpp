@@ -1,12 +1,13 @@
 /*
-*  main.c
+*  vb_01_main.c
 *
 *  Copyright (c) 2024 by Avans Hogeschool.
 * 
 *  Date:    29-02-2024
-*  Author:  R. Smeets & Gerard Harkema
+*  Author:  R. Smeets & G.A. Harkema
 *
 */
+
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -18,61 +19,15 @@
 #include <stdbool.h>
 #include <avr/interrupt.h>
 
-
 ///////////////////////////////////////////////////////////////////////////////
 // application specific includes
 
 
 #include "ports328.h"
-#include "timer0.h"
-
-///////////////////////////////////////////////////////////////////////////////
-// definieer vanaf hier de gevraagde functies
-
-void LedsOn(void)
-{
-	// TODO
-}
-
-void LedsOff(void)
-{
-	// TODO
-}
-
-void SetSyncLed(bool ledOn)
-{
-		// TODO
-}
-
-bool IsSyncBitSet(void)
-{
-	return false;
-}
-
-bool IsSyncDetected(void)
-{
-	// TODO
-	return false;
-}
-
-void WaitUntilSyncReleased(void)
-{
-	// TODO
-}
-
-void ControlLamps(uint8_t functionCode)
-{
-	// TODO	
-}
-
-uint8_t GetPLCData(void)
-{
-	
-}
-
 
 ///////////////////////////////////////////////////////////////////////////////
 // program entry point
+
 
 void setup(void)
 {
@@ -81,13 +36,14 @@ void setup(void)
 
 	Serial.println("Setup complete.");
 
-	LedsOff();
-
-
 }
 
 void loop(void)
 
 {
-	// voeg hier de uitwerking in van de opdracht(en)
+
+	PORTD = 0xff;
+	delay(100);
+	PORTD = 0x00;
+	delay(100);
 }

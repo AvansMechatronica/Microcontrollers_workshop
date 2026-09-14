@@ -4,19 +4,9 @@
 *  Copyright (c) 2024 by Avans Hogeschool.
 * 
 *  Date:    29-02-2024
-*  Author:  R. Smeets
+*  Author:  R. Smeets & G.A. Harkema
 *
 */
-
-
-///////////////////////////////////////////////////////////////////////////////
-// system includes
-
-#include <arduino.h>
-#include <inttypes.h>
-#include <avr/io.h>
-#include <stdbool.h>
-#include <avr/interrupt.h>
 
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -51,7 +41,4 @@ void loop(void)
 {
 	// hier komt je programma...
 
-	  // standaard einde van main
-
-	// hier is je programma afgelopen...
 }
