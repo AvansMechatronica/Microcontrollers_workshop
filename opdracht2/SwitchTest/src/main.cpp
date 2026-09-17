@@ -44,9 +44,9 @@ void loop(void)
 {
 		// voeg hier C-code toe waarmee het gedrag van
 		// de switches kan worden onderzocht.
-		// Maak hiervoor gebruik van PORTD en PINB
+		// Maak hiervoor gebruik van PORTD(Output) en PINB(input)
 
-		// N.B.: kijk UITSLUITEND naar de LED's B3..B0!!
+		// N.B.: kijk Schakelaars UITSLUITEND naar de Schakelaars B3..B0!!
 
 		PORTD = 0;
 	
