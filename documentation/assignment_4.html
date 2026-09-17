@@ -1,0 +1,204 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="nl" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Opdracht 4: Oefenen met functies in C &mdash; Microcontrllers Workshop 0.1 documentatie</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+      <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
+
+  
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=a57088fb"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+      <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+      <script src="../_static/copybutton.js?v=f281be69"></script>
+      <script src="../_static/translations.js?v=e4d38c6a"></script>
+      <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Zoeken" href="../search.html" />
+    <link rel="next" title="Opdracht 5: Simulatie van signaallamp-besturing" href="assignment_5.html" />
+    <link rel="prev" title="Opdracht 3: Programmeren in C op de Arduino Uno" href="assignment_3.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Microcontrllers Workshop
+              <img src="../_static/avans-hogeschool-logo.png" class="logo" alt="Logo"/>
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Zoek in documentatie" aria-label="Zoek in documentatie" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigatiemenu">
+              <p class="caption" role="heading"><span class="caption-text">Inhoudsopgave:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">Inleiding</a></li>
+<li class="toctree-l1"><a class="reference internal" href="arduino.html">Arduino Uno</a></li>
+<li class="toctree-l1"><a class="reference internal" href="install.html">Visual Studio Code en PlatformIO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_1.html">Opdracht 1: Oefenen met PSD’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_2.html">Opdracht 2: Kennismaken met de Arduino Uno en PlatformIO</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_3.html">Opdracht 3: Programmeren in C op de Arduino Uno</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Opdracht 4: Oefenen met functies in C</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#inleiding">Inleiding</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-4-1-eenvoudige-functie-implementeren-en-gebruiken">Opdracht 4.1: Eenvoudige functie implementeren en gebruiken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-4-2-functie-met-returnwaarde-implementeren-en-gebruiken">Opdracht 4.2: Functie met returnwaarde implementeren en gebruiken</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-4-3-functie-met-parameter-en-returnwaarde">Opdracht 4.3: Functie met parameter en returnwaarde</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#opdracht-4-4-inleveren-van-de-opdrachten">Opdracht 4.4: Inleveren van de opdrachten</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_5.html">Opdracht 5: Simulatie van signaallamp-besturing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="assignment_6.html">Opdracht 6: Testen en simuleren van de signaallamp-besturing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="examples.html">Voorbeeldprogramma’s</a></li>
+<li class="toctree-l1"><a class="reference internal" href="faq.html">Veelgestelde vragen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="teacher_manual.html">Docentenhandleiding</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Navigatiemenu voor mobiel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Microcontrllers Workshop</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Paginanavigatie">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Opdracht 4: Oefenen met functies in C</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/documentation/assignment_4.md.txt" rel="nofollow"> Bekijk paginabron</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section class="tex2jax_ignore mathjax_ignore" id="opdracht-4-oefenen-met-functies-in-c">
+<h1>Opdracht 4: Oefenen met functies in C<a class="headerlink" href="#opdracht-4-oefenen-met-functies-in-c" title="Link to this heading"></a></h1>
+<section id="inleiding">
+<h2>Inleiding<a class="headerlink" href="#inleiding" title="Link to this heading"></a></h2>
+<p>In dit practicum oefen je met functies in de programmeertaal C.</p>
+<div class="admonition note">
+<p class="admonition-title">Notitie</p>
+<p>Tijdens de uitvoering van deze opdracht houd je een rapportage bij. Gebruik hiervoor het document <code class="docutils literal notranslate"><span class="pre">Rapportage_Opdracht_4.docx</span></code> in de map <code class="docutils literal notranslate"><span class="pre">opdracht4</span></code> van de microcontrollers workshop. Dit bestand lever je in op Brightspace.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p>Het is niet verplicht om PSD’s te maken, maar dit mag wel als je daarmee je uitwerking kunt verduidelijken.</p></li>
+<li><p>Gebruik bij deze opdrachten het project <code class="docutils literal notranslate"><span class="pre">Framework_4</span></code> als startpunt. Maak voor elke deelopdracht een aparte kopie, met een duidelijke naam die overeenkomt met de opdracht (bijvoorbeeld <code class="docutils literal notranslate"><span class="pre">Framework_4_1</span></code> voor opdracht 4.1).</p></li>
+</ul>
+</div>
+</section>
+<section id="opdracht-4-1-eenvoudige-functie-implementeren-en-gebruiken">
+<h2>Opdracht 4.1: Eenvoudige functie implementeren en gebruiken<a class="headerlink" href="#opdracht-4-1-eenvoudige-functie-implementeren-en-gebruiken" title="Link to this heading"></a></h2>
+<ol class="arabic simple">
+<li><p>Implementeer in de functie <code class="docutils literal notranslate"><span class="pre">main()</span></code> van je project <code class="docutils literal notranslate"><span class="pre">Framework_4_1</span></code> een knipperlicht met de LED’s op output-poort D. Gebruik eventueel code uit eerdere opdrachten.</p></li>
+<li><p>Maak vervolgens de volgende eenvoudige functies (elk met een body van een regel):</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">LedsOn(void)</span></code>: zet alle LED’s op poort D aan.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">LedsOff(void)</span></code>: zet alle LED’s op poort D uit.</p></li>
+</ul>
+</li>
+<li><p>Vervang in <code class="docutils literal notranslate"><span class="pre">main()</span></code> de bestaande code voor LED aan/uit door aanroepen van <code class="docutils literal notranslate"><span class="pre">LedsOn()</span></code> en <code class="docutils literal notranslate"><span class="pre">LedsOff()</span></code>.</p></li>
+<li><p>Controleer of het knipperlicht nog steeds correct werkt.</p></li>
+</ol>
+</section>
+<section id="opdracht-4-2-functie-met-returnwaarde-implementeren-en-gebruiken">
+<h2>Opdracht 4.2: Functie met returnwaarde implementeren en gebruiken<a class="headerlink" href="#opdracht-4-2-functie-met-returnwaarde-implementeren-en-gebruiken" title="Link to this heading"></a></h2>
+<p>Maak een kopie van <code class="docutils literal notranslate"><span class="pre">Framework_4_1</span></code> en noem deze <code class="docutils literal notranslate"><span class="pre">Framework_4_2</span></code>. Open daarna de map van <code class="docutils literal notranslate"><span class="pre">Framework_4_2</span></code> in Visual Studio Code en open <code class="docutils literal notranslate"><span class="pre">main.c</span></code>.</p>
+<p>In opdracht 3 is het gedrag van de LED’s en drukknoppen op het shield bepaald. De LED’s zijn aangesloten op output-poort D van de microcontroller, de drukknoppen op input-poort B.</p>
+<p>Beantwoord eerst de volgende vragen als voorbereiding:</p>
+<ul class="simple">
+<li><p>Vraag 1: een uitgang van poort D wordt op logische <code class="docutils literal notranslate"><span class="pre">1</span></code> gezet. Is de bijbehorende LED dan aan of uit?</p></li>
+<li><p>Vraag 2: een ingang van poort B wordt uitgelezen als logische <code class="docutils literal notranslate"><span class="pre">1</span></code>. Is de bijbehorende drukknop dan ingedrukt of niet ingedrukt?</p></li>
+</ul>
+<p>Werk daarna de volgende stappen uit:</p>
+<ol class="arabic simple">
+<li><p>Pas het knipperlicht uit opdracht 4.1 zo aan dat het alleen knippert als een of meer knoppen worden ingedrukt. Let op: voor de knoppen op poort B worden alleen bits <code class="docutils literal notranslate"><span class="pre">0..3</span></code> gebruikt. Gebruik een masker en een bitwise AND (<code class="docutils literal notranslate"><span class="pre">&amp;</span></code>) om deze bits te selecteren.</p></li>
+<li><p>Implementeer de functie <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">IsEenKnopIngedrukt(void)</span></code>. Deze geeft <code class="docutils literal notranslate"><span class="pre">true</span></code> terug als minimaal een knop is ingedrukt, anders <code class="docutils literal notranslate"><span class="pre">false</span></code>.</p></li>
+<li><p>Gebruik <code class="docutils literal notranslate"><span class="pre">IsEenKnopIngedrukt()</span></code> in het hoofdprogramma, bijvoorbeeld:</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">IsEenKnopIngedrukt</span><span class="p">()</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// knipperlicht code</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="opdracht-4-3-functie-met-parameter-en-returnwaarde">
+<h2>Opdracht 4.3: Functie met parameter en returnwaarde<a class="headerlink" href="#opdracht-4-3-functie-met-parameter-en-returnwaarde" title="Link to this heading"></a></h2>
+<p>In opdracht 4.2 gaf <code class="docutils literal notranslate"><span class="pre">IsEenKnopIngedrukt()</span></code> aan of er minimaal een knop was ingedrukt. In deze opdracht maak je een nieuwe functie die controleert of een specifieke knop is ingedrukt. Het knopnummer (<code class="docutils literal notranslate"><span class="pre">0</span></code> t/m <code class="docutils literal notranslate"><span class="pre">3</span></code>, overeenkomend met D0 t/m D3 op het shield) wordt een parameter.</p>
+<ol class="arabic simple">
+<li><p>Implementeer de functie <code class="docutils literal notranslate"><span class="pre">bool</span> <span class="pre">IsKnopIngedrukt(uint8_t</span> <span class="pre">knopNummer)</span></code>. Deze geeft <code class="docutils literal notranslate"><span class="pre">true</span></code> terug als de knop met nummer <code class="docutils literal notranslate"><span class="pre">knopNummer</span></code> is ingedrukt, anders <code class="docutils literal notranslate"><span class="pre">false</span></code>. Zorg dat dit correct werkt voor alle waarden van <code class="docutils literal notranslate"><span class="pre">knopNummer</span></code> tussen <code class="docutils literal notranslate"><span class="pre">0</span></code> en <code class="docutils literal notranslate"><span class="pre">3</span></code>.</p></li>
+<li><p>Gebruik <code class="docutils literal notranslate"><span class="pre">IsKnopIngedrukt(uint8_t</span> <span class="pre">knopNummer)</span></code> in het hoofdprogramma. Als het knipperlicht bijvoorbeeld alleen bij knop 2 mag knipperen:</p></li>
+</ol>
+<div class="highlight-cpp notranslate"><div class="highlight"><pre><span></span><span class="kt">uint8_t</span><span class="w"> </span><span class="n">knopNummer</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span><span class="p">;</span>
+<span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">IsKnopIngedrukt</span><span class="p">(</span><span class="n">knopNummer</span><span class="p">)</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">true</span><span class="p">)</span>
+<span class="p">{</span>
+<span class="w">    </span><span class="c1">// knipperlicht code</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="opdracht-4-4-inleveren-van-de-opdrachten">
+<h2>Opdracht 4.4: Inleveren van de opdrachten<a class="headerlink" href="#opdracht-4-4-inleveren-van-de-opdrachten" title="Link to this heading"></a></h2>
+<p>Lever je rapportage in op Brightspace. Gebruik hiervoor het document <code class="docutils literal notranslate"><span class="pre">Rapportage_Opdracht_4.docx</span></code> in de map <code class="docutils literal notranslate"><span class="pre">opdracht4</span></code> van de microcontrollers workshop. In dit document vul je de antwoorden op de vragen en de conclusies van de verschillende opdrachten in.</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Voettekst">
+        <a href="assignment_3.html" class="btn btn-neutral float-left" title="Opdracht 3: Programmeren in C op de Arduino Uno" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Vorige</a>
+        <a href="assignment_5.html" class="btn btn-neutral float-right" title="Opdracht 5: Simulatie van signaallamp-besturing" accesskey="n" rel="next">Volgende <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright Gerard Harkema &amp; Vincent Teuben.</p>
+  </div>
+
+  Gebouwd met <a href="https://www.sphinx-doc.org/">Sphinx</a> met een
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">thema</a>
+    geleverd door <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
