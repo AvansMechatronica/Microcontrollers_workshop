@@ -143,7 +143,7 @@ Werk daarna uit:
 Gebruik voor deze opdracht de kennis uit `LedTest` (opdracht 2.4).
 
 :::{warning}
-We hebben 4 schakelaars en 8 LED's. Kijk in deze opdracht alleen naar LED's B3..B0 (de 4 meest rechtse LED's). LED's 7..4 hebben een andere functie.
+We hebben 4 schakelaars en 8 LED's. Kijk in deze opdracht alleen naar Schakelaars B3..B0 (de 4 meest rechtse schakelaars). Schakelaars 7..4 hebben een andere functie.
 :::
 
 Een schakelaar kan op twee manieren op een microcontroller worden aangesloten (figuur 5 en figuur 6). Onderzoek hoe de schakelaars op het Arduino LED/switch-shield zijn geconfigureerd.
