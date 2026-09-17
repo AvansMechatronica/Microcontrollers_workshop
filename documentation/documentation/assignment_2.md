@@ -111,6 +111,10 @@ Een LED kan op twee manieren op een microcontroller worden aangesloten (figuur 3
 :::
 ::::
 
+:::{note}
+De leds B7..B0 zijn aangesloten op PORTD7..0 van de microcontroller.
+:::
+
 Werk daarna uit:
 
 1. Open in Visual Studio Code het project `LedTest` door de map `opdracht2/LedTest` te openen (`File > Open Folder`).
@@ -156,6 +160,10 @@ Een schakelaar kan op twee manieren op een microcontroller worden aangesloten (f
 **Figuur 6. Input/schakelaar aangesloten op voedingsspanning**
 :::
 ::::
+
+:::{note}
+De schakelaars D3..D0 zijn aangesloten op PINB3..0 van de microcontroller.
+:::
 
 4. Vul tabel 2 in. Neem aan: logische `1` is +5 Volt en logische `0` is 0 Volt. Vul per figuur in of de schakelaar `IN` of `LOS` is.
 
