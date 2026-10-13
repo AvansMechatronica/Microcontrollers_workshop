@@ -49,7 +49,7 @@ void SetSyncLED(bool LedLOn)
 {
 	uint8_t portValue = 0;
 	
-	portValue = PIND;
+	portValue = PORTD;
 	
 	if (LedLOn)
 	{
@@ -171,7 +171,7 @@ void ControlLamps(uint8_t functionCode)
 	{
 	}
 	
-	portValue = PIND & 0xf0;
+	portValue = PORTD & 0xf0;
 	PORTD = portValue | ledValue;
 }
 
@@ -205,7 +205,7 @@ uint8_t GetFunctionCode(uint8_t inputValue)
 
 void SetAcknowledge(void)
 {
-	PORTD = PIND | _BV(ACK_BIT);
+	PORTD = PORTD | _BV(ACK_BIT);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -213,7 +213,7 @@ void SetAcknowledge(void)
 
 void ClearAcknowledge(void)
 {
-	PORTD = PIND & ~_BV(ACK_BIT);
+	PORTD = PORTD & ~_BV(ACK_BIT);
 }
 
 ///////////////////////////////////////////////////////////////////////////////
