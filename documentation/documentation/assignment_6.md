@@ -117,6 +117,12 @@ Op de PLC-simulator zijn standaardprogramma's beschikbaar voor de signaalzuil (t
 | 9 | Stuur achtereenvolgens function codes 0 t/m 7 uit met tussenpauzes van een halve seconde |
 
 *Tabel 4. PLC-simulatieprogramma's*
+:::{note}
+
+Zorg ervoor dat de PLC-simulator aansluit op een voedingsadapter met een minimale spanning van 20V DC.
+
+:::
+
 
 Met de draaiknop `PROGRAM SELECT` kies je het gewenste simulatieprogramma. Op het OLED-scherm zie je deze keuze en de functiecode.
 
